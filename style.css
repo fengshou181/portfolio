@@ -156,7 +156,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .nav-menu-toggle { display: none; }
 
 /* ============ HERO ============ */
-.hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
+.hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: flex-start; overflow: hidden; }
 .hero-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-image: url('images/hero-bg-new.jpeg'); background-size: cover; background-position: center center;
@@ -226,8 +226,8 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 /* Hero content: left+right split layout */
 .hero-content {
   position: relative; z-index: 2; width: 100%; max-width: var(--max-w); margin: 0 auto;
-  padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 80px;
-  padding-top: 200px; padding-bottom: 320px;
+  padding: 0 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 80px;
+  padding-top: 140px; padding-bottom: 110px;
 }
 .hero-left { flex: 1; max-width: 680px; padding: 36px 40px; border-radius: 20px; }
 .hero-right { flex-shrink: 0; width: 320px; padding: 28px; border-radius: 16px; background: rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); }
@@ -247,7 +247,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px;
   font-family: var(--font-mono); font-size: 12px; color: var(--text-dim);
-  margin-bottom: 28px; backdrop-filter: blur(10px); background: rgba(255,255,255,0.5);
+  margin-bottom: 20px; backdrop-filter: blur(10px); background: rgba(255,255,255,0.5);
   opacity: 0; transform: translateY(20px);
   animation: heroFadeUp 0.8s ease forwards; animation-delay: 0.3s;
 }
@@ -259,7 +259,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .hero-title {
   font-family: var(--font-display); font-size: clamp(56px, 8vw, 128px);
-  font-weight: 700; line-height: 0.95; letter-spacing: -4px; margin-bottom: 20px;
+  font-weight: 700; line-height: 0.95; letter-spacing: -4px; margin-bottom: 14px;
   text-shadow: 0 2px 30px rgba(244,241,247,0.6);
   opacity: 0; transform: translateY(30px);
   animation: heroFadeUp 0.9s ease forwards; animation-delay: 0.5s;
@@ -271,14 +271,14 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 }
 .hero-cn-name {
   font-family: var(--font-serif); font-size: 48px; font-weight: 600;
-  margin: 28px 0 14px; color: var(--text); letter-spacing: 4px;
+  margin: 18px 0 10px; color: var(--text); letter-spacing: 4px;
   text-shadow: 0 2px 20px rgba(244,241,247,0.5);
   opacity: 0; transform: translateY(20px);
   animation: heroFadeUp 0.8s ease forwards; animation-delay: 0.55s;
 }
 .hero-cn-sub {
   font-family: var(--font-mono); font-size: 12px; color: var(--text-mute);
-  margin-bottom: 36px; letter-spacing: 1.5px;
+  margin-bottom: 24px; letter-spacing: 1.5px;
   opacity: 0; transform: translateY(20px);
   animation: heroFadeUp 0.8s ease forwards; animation-delay: 0.65s;
 }
@@ -364,7 +364,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
   white-space: nowrap; border: 1px solid var(--border);
 }
 .hero-scroll {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 2;
+  position: absolute; bottom: 130px; right: 48px; z-index: 2;
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   opacity: 0;
   animation: heroFadeUp 0.8s ease forwards, bounce 2s infinite;
@@ -373,8 +373,8 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .hero-scroll .line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-mute), transparent); }
 .hero-scroll .text { font-family: var(--font-mono); font-size: 10px; color: var(--text-mute); letter-spacing: 2px; writing-mode: vertical-rl; }
 @keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ============ SECTION COMMON ============ */
