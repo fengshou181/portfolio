@@ -227,14 +227,14 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .hero-content {
   position: relative; z-index: 2; width: 100%; max-width: var(--max-w); margin: 0 auto;
   padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 80px;
-  padding-top: 180px; padding-bottom: 320px;
+  padding-top: 200px; padding-bottom: 320px;
 }
 .hero-left { flex: 1; max-width: 680px; padding: 36px 40px; border-radius: 20px; }
 .hero-right { flex-shrink: 0; width: 320px; padding: 28px; border-radius: 16px; background: rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); }
 
 /* Magazine top bar */
 .hero-top-bar {
-  position: absolute; top: 90px; left: 24px; right: 24px; z-index: 2;
+  position: absolute; top: 110px; left: 24px; right: 24px; z-index: 2;
   max-width: var(--max-w); margin: 0 auto;
   display: flex; justify-content: space-between; align-items: center;
   font-family: var(--font-mono);
