@@ -126,13 +126,13 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 }
 .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
 .nav-logo-text .name { font-size: 15px; color: var(--text); font-weight: 600; }
-.nav-logo-text .role { font-size: 10px; color: var(--text-mute); font-family: var(--font-mono); letter-spacing: 1px; text-transform: uppercase; }
+.nav-logo-text .role { font-size: 10px; color: var(--text-dim); font-family: var(--font-mono); letter-spacing: 1px; text-transform: uppercase; }
 .nav-links {
   display: flex; gap: 4px; align-items: center;
   border-radius: 100px; padding: 4px;
 }
 .nav-links a {
-  position: relative; padding: 14px 36px; font-size: 20px; color: var(--text-dim);
+  position: relative; padding: 14px 36px; font-size: 20px; color: var(--text);
   transition: all 0.25s; font-weight: 500; border-radius: 100px; z-index: 1; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--text); background: rgba(120,100,145,0.06); }
