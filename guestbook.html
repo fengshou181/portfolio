@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留言 | 郑年丰 - 数据工程师</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader">
+  <div class="loader-logo">ZF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">ZF</div>
+      <div class="nav-logo-text"><span class="name">郑年丰</span><span class="role">Data Engineer</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="index.html#about">关于</a>
+      <a href="index.html#experience">经历</a>
+      <a href="index.html#projects">项目</a>
+      <a href="index.html#skills">能力</a>
+      <a href="guestbook.html" class="active">留言</a>
+      <a href="index.html#contact">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <button class="nav-cta" onclick="window.location.href='index.html#contact'"><span class="dot"></span> 联系我</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-bg-full" style="background-image: url('images/tw_44.jpg');"></div>
+  <div class="page-bg-top-right" style="background-image: url('images/128641800_p0.jpg');"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">GUESTBOOK</span>
+      <h1 class="section-title">留言</h1>
+      <p class="section-desc">说点什么吧，留下你的足迹。</p>
+    </div>
+
+    <div class="guestbook-input fade-up">
+      <div class="gb-avatar">&#9998;</div>
+      <div class="gb-form">
+        <textarea class="gb-textarea" placeholder="留下你的想法..." rows="3"></textarea>
+        <div class="gb-actions">
+          <button class="gb-btn ghost">清空</button>
+          <button class="gb-btn">发布留言</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="guestbook-list">
+      <div class="gb-message fade-up">
+        <div class="gb-msg-avatar"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cute%20anime%20avatar%20with%20blue%20hair%2C%20minimalist%2C%20dark%20background&image_size=square" alt="头像"></div>
+        <div class="gb-msg-body">
+          <div class="gb-msg-head"><span class="gb-msg-name">星野听风</span><span class="gb-msg-device">Windows · Edge</span></div>
+          <p class="gb-msg-text">网站改版太棒了！暖金色调和赛马娘背景元素的结合很巧妙，不抢内容的风头但氛围感拉满了。期待后续的文章更新~</p>
+          <div class="gb-msg-foot"><span class="gb-msg-action">&#10084; 喜欢</span><span class="gb-msg-action">&#8635; 回复</span></div>
+        </div>
+      </div>
+      <div class="gb-message fade-up">
+        <div class="gb-msg-avatar"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cute%20anime%20avatar%20with%20green%20hair%2C%20minimalist%2C%20dark%20background&image_size=square" alt="头像"></div>
+        <div class="gb-msg-body">
+          <div class="gb-msg-head"><span class="gb-msg-name">数据小站</span><span class="gb-msg-device">macOS · Safari</span></div>
+          <p class="gb-msg-text">三层数仓的踩坑实录写得很实在，字段映射那部分深有同感。希望能多写一些 ETL 具体细节的文章！</p>
+          <div class="gb-msg-foot"><span class="gb-msg-action">&#10084; 喜欢</span><span class="gb-msg-action">&#8635; 回复</span></div>
+        </div>
+      </div>
+      <div class="gb-message fade-up">
+        <div class="gb-msg-avatar"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cute%20anime%20avatar%20with%20pink%20hair%2C%20minimalist%2C%20dark%20background&image_size=square" alt="头像"></div>
+        <div class="gb-msg-body">
+          <div class="gb-msg-head"><span class="gb-msg-name">BI工坊</span><span class="gb-msg-device">Windows · Chrome</span></div>
+          <p class="gb-msg-text">友链已添加！8套报表拆解那篇什么时候出？急需 DAX 和 Power BI 实战参考资料。</p>
+          <div class="gb-msg-foot"><span class="gb-msg-action">&#10084; 喜欢</span><span class="gb-msg-action">&#8635; 回复</span></div>
+        </div>
+      </div>
+      <div class="gb-message fade-up">
+        <div class="gb-msg-avatar"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cute%20anime%20avatar%20with%20purple%20hair%2C%20minimalist%2C%20dark%20background&image_size=square" alt="头像"></div>
+        <div class="gb-msg-body">
+          <div class="gb-msg-head"><span class="gb-msg-name">SQL玩家</span><span class="gb-msg-device">Linux · Firefox</span></div>
+          <p class="gb-msg-text">从 rainzt.cn 过来的，设计风格好喜欢！特别是粒子背景和主题切换，交互细节做得很到位。</p>
+          <div class="gb-msg-foot"><span class="gb-msg-action">&#10084; 喜欢</span><span class="gb-msg-action">&#8635; 回复</span></div>
+        </div>
+      </div>
+      <div class="gb-message fade-up">
+        <div class="gb-msg-avatar"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cute%20anime%20avatar%20with%20orange%20hair%2C%20minimalist%2C%20dark%20background&image_size=square" alt="头像"></div>
+        <div class="gb-msg-body">
+          <div class="gb-msg-head"><span class="gb-msg-name">前端漫游</span><span class="gb-msg-device">iOS · Safari</span></div>
+          <p class="gb-msg-text">赛马娘主题！小栗帽大爱！背景元素融入得非常自然，不突兀，这个度把握得好。</p>
+          <div class="gb-msg-foot"><span class="gb-msg-action">&#10084; 喜欢</span><span class="gb-msg-action">&#8635; 回复</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-static">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="articles.html">文章</a>
+      <a href="changelog.html">日志</a>
+      <a href="friends.html">友链</a>
+      <a href="moments.html">朋友圈</a>
+      <a href="guestbook.html">留言</a>
+    </div>
+    <div class="footer-stats"><span><b>访客</b> 1,024</span><span><b>浏览</b> 3,580</span><span><b>文章</b> 3</span></div>
+    <div class="footer-tech"><span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span>OGURI × TAMAMO</span></div>
+    <div class="footer-copy">© 2026 ZHENG NIANFENG. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>

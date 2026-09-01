@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>92061353</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" id="style-css" href="https://moxian.bobopic.com/go/css.css?v=1.0.1" type="text/css" media="all">
+</head>
+<body>
+    <img 
+     id="main-img" 
+     src="https://img01.sogoucdn.com/net/a/04/link?appid=100520031&amp;w=8060&amp;url=tvax2.sinaimg.cn/large/7e8b4ac8gy1hv2be5h91kj24ld2oghdu.jpg" 
+     alt="Image"
+     onclick="this.setAttribute('download','image.jpg');window.open(this.src);"
+     style="
+         -webkit-touch-callout: default !important;
+         user-select: auto !important;
+         pointer-events: auto !important;
+         cursor: pointer;
+     "
+>
+
+    <div class="container">
+        <div class="text-box">
+            <div style="font-weight:bold; margin-bottom:5px;">
+                载入成功·长按保存 ✨            </div>
+            
+                        
+                        
+            <div class="info-item">Pid: 92061353</div>
+
+        </div>
+    </div>
+    
+    <!-- 微信弹窗DOM 保持不变，放在santa.js上方 -->
+<div class="wechat-tip-mask" id="wechatMask">
+    <div class="wechat-tip-box">
+        <button class="wechat-close-btn" id="closeWechatTip">×</button>
+        <div class="wechat-tip-text">
+            如果保存图片失败，请在右上角 ··· 按钮中选择「在默认浏览器打开」喔！ 
+        </div>
+    </div>
+</div>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const ua = navigator.userAgent.toLowerCase();
+    const isWx = ua.includes('micromessenger') && !ua.includes('wxwork');
+    const mask = document.getElementById('wechatMask');
+    const closeBtn = document.getElementById('closeWechatTip');
+    const storageKey = 'wechat_tip_closed';
+
+    // 是微信 且 本地没有关闭记录 才展示弹窗
+    if(isWx && !localStorage.getItem(storageKey)){
+        mask.style.display = 'flex';
+        mask.style.visibility = 'visible';
+    }
+
+    // 点X关闭并永久记录
+    closeBtn.onclick = function(){
+        mask.style.display = 'none';
+        localStorage.setItem(storageKey, '1');
+    };
+    // 点击遮罩空白关闭并永久记录
+    mask.onclick = function(e){
+        if(e.target === mask){
+            mask.style.display = 'none';
+            localStorage.setItem(storageKey, '1');
+        }
+    }
+});
+</script>
+ <style>
+/* 微信提示弹窗遮罩 */
+.wechat-tip-mask {
+    display: none;
+    visibility: hidden;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.65);
+    z-index: 99999; /* 抬高层级，防止被其他元素遮挡 */
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+/* 弹窗容器 */
+.wechat-tip-box {
+    width: 100%;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+/* 关闭按钮X */
+.wechat-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.wechat-close-btn:active {
+    background: #e0e0e0;
+}
+.wechat-tip-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 8px;
+}
+</style>
+<script src="https://moxian.bobopic.com/go/santa.js?v=1.0.1"></script>
+</body>
+</html>

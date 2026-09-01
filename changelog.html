@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>更新日志 | 郑年丰 - 数据工程师</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader">
+  <div class="loader-logo">ZF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">ZF</div>
+      <div class="nav-logo-text"><span class="name">郑年丰</span><span class="role">Data Engineer</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="index.html#about">关于</a>
+      <a href="index.html#experience">经历</a>
+      <a href="index.html#projects">项目</a>
+      <a href="index.html#skills">能力</a>
+      <a href="changelog.html" class="active">日志</a>
+      <a href="index.html#contact">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <button class="nav-cta" onclick="window.location.href='index.html#contact'"><span class="dot"></span> 联系我</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-bg-full" style="background-image: url('images/m88.jpg');"></div>
+  <div class="page-bg-top-right" style="background-image: url('images/tw_44.jpg');"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">CHANGELOG</span>
+      <h1 class="section-title">更新日志</h1>
+      <p class="section-desc">网站迭代记录与功能更新历史。</p>
+    </div>
+
+    <div class="timeline fade-up">
+      <div class="log-item">
+        <div class="log-dot"></div>
+        <div class="log-date">2026.08.29</div>
+        <h3 class="log-title">V2.1 全新改版上线<span class="log-badge">NEW</span></h3>
+        <div class="log-desc">
+          重构整站架构，新增文章、更新日志、友链、朋友圈、留言五大独立页面。
+          配色方案从冷色系切换至暖金色调，融入赛马娘角色背景元素。
+          导航栏适配 10 个板块的快速跳转，主题切换支持金、玫红、天蓝、银四套配色。
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-dot"></div>
+        <div class="log-date">2026.08.29</div>
+        <h3 class="log-title">V2.0 暗色主题 + 粒子背景</h3>
+        <div class="log-desc">
+          首页接入 Canvas 粒子网络交互背景，鼠标附近粒子产生排斥效果。
+          全站添加 Intersection Observer 滚动渐入动画，cubic-bezier 缓动。
+          新增主题切换按钮，4 套配色一键循环。
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-dot"></div>
+        <div class="log-date">2026.08.28</div>
+        <h3 class="log-title">V1.2 精选项目模块上线</h3>
+        <div class="log-desc">
+          新增三个核心项目卡片：榜样全链路数仓、罗森数仓分析平台、罗森用户价值度分析。
+          支持 hover 放大、边框高亮和箭头旋转动效。
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-dot"></div>
+        <div class="log-date">2026.08.28</div>
+        <h3 class="log-title">V1.1 导航栏与 Hero 优化</h3>
+        <div class="log-desc">
+          新增固定导航栏，左 Logo + 中导航 + 右 CTA 布局。
+          导航栏滚动收缩，底部渐变描边线，当前板块高亮联动。
+          Hero 首页添加入场动画序列与滚动提示。
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-dot"></div>
+        <div class="log-date">2026.08.27</div>
+        <h3 class="log-title">V1.0 初版上线</h3>
+        <div class="log-desc">
+          基础页面结构搭建，包含 Hero 首页、关于、项目、能力、联系五个核心板块。
+          Space Grotesk + Inter + JetBrains Mono 字体方案。
+          1700px 内容宽度，PC 端适配。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-static">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="articles.html">文章</a>
+      <a href="changelog.html">日志</a>
+      <a href="friends.html">友链</a>
+      <a href="moments.html">朋友圈</a>
+      <a href="guestbook.html">留言</a>
+    </div>
+    <div class="footer-stats"><span><b>访客</b> 1,024</span><span><b>浏览</b> 3,580</span><span><b>文章</b> 3</span></div>
+    <div class="footer-tech"><span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span>OGURI × TAMAMO</span></div>
+    <div class="footer-copy">© 2026 ZHENG NIANFENG. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>

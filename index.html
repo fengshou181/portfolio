@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郑年丰 | 数据工程师</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/hero_oguri.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="has-hero">
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-logo">ZF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-mark">ZF</div>
+      <div class="nav-logo-text">
+        <span class="name">郑年丰</span>
+        <span class="role">DATA ENGINEER</span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero" data-section="hero" class="active">首页</a>
+      <a href="#about" data-section="about">关于</a>
+      <a href="#experience" data-section="experience">经历</a>
+      <a href="#projects" data-section="projects">项目</a>
+      <a href="#skills" data-section="skills">能力</a>
+      <a href="#contact" data-section="contact">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <a href="#contact" class="nav-cta">
+        <span class="dot"></span>
+        联系我
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-tint"></div>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-top-bar">
+    <div class="hero-vol">✱ #VOL 2026.08</div>
+    <div class="hero-brand">Portfolio.</div>
+    <div class="hero-vol-jp">ポートフォリオ</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag">DATA ENGINEER / AVAILABLE</div>
+      <h1 class="hero-title">
+        <span class="line">数据驱动</span>
+        <span class="line"><span class="accent">价值创造</span></span>
+      </h1>
+      <div class="hero-cn-name">郑年丰</div>
+      <div class="hero-cn-sub">zhèng nián fēng</div>
+      <p class="hero-subtitle">
+        1年数据工程实战经验，从数仓架构到ETL开发到可视化看板全链路交付。
+        擅长多源数据整合与用户价值分析，用数据为业务决策提供量化支撑。
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">查看项目</a>
+        <a href="#contact" class="btn-ghost">联系合作</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-vname">ZHENG&nbsp;&nbsp;NIANFENG</div>
+      <div class="hero-vmeta">
+        <div class="vmeta-row"><span class="vmeta-label">#ROLE</span><span class="vmeta-val">DATA ENGINEER</span></div>
+        <div class="vmeta-row"><span class="vmeta-label">#EXP</span><span class="vmeta-val">1 YEAR</span></div>
+        <div class="vmeta-row"><span class="vmeta-label">#EDU</span><span class="vmeta-val">BIG DATA</span></div>
+      </div>
+      <div class="hero-barcode">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-barcode-text">2 00001 20268</div>
+    </div>
+  </div>
+
+  <div class="hero-bottom-bar">
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">5+</div><div class="label">平台整合</div></div>
+      <div class="hero-stat"><div class="num">100W+</div><div class="label">数据量级</div></div>
+      <div class="hero-stat"><div class="num">99.8%</div><div class="label">数据一致</div></div>
+      <div class="hero-stat"><div class="num">60%</div><div class="label">效率提升</div></div>
+    </div>
+    <div class="hero-tech-strip">
+      <span>SQL</span><span>ETL</span><span>StarRocks</span><span>Power BI</span><span>Quick BI</span><span>Kettle</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="line"></div>
+    <div class="text">SCROLL</div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section about">
+  <div class="about-bg-deco"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">ABOUT</span>
+      <h2 class="section-title">关于我</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-info fade-up">
+        <h3>郑年丰</h3>
+        <div class="role">DATA ENGINEER / 数据工程师</div>
+        <p class="bio">
+          1年数据工程实战经验，具备从零搭建数据仓库的完整能力。曾主导多平台广告投放与订单转化的全链路数仓建设，
+          覆盖百万级订单数据，数据一致性达99.8%。擅长SQL ETL开发、多源数据整合、LTV/RFM/ARPU等业务分析方法，
+          并能独立完成Power BI / Quick BI可视化看板搭建。每段经历均有量化业务产出。
+        </p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="label">PHONE</span>
+            <span class="value">18361288637</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">EMAIL</span>
+            <span class="value">youla556wd@163.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">EXP</span>
+            <span class="value">1年 / 数据工程</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">EDU</span>
+            <span class="value">黑龙江工业学院 · 数据科学与大数据技术</span>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="num">5</div>
+            <div class="label">广告平台整合</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">100W+</div>
+            <div class="label">订单数据覆盖</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">99.8%</div>
+            <div class="label">数据一致性</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">60%</div>
+            <div class="label">效率提升</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">EXPERIENCE</span>
+      <h2 class="section-title">经历</h2>
+      <p class="section-desc">从数仓开发到业务分析，每段经历都有量化产出。</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.03 - 2026.08</div>
+          <h3 class="timeline-title">数据工程师 · 榜样教育</h3>
+          <p class="timeline-desc">主导全链路数仓建设，整合5个广告平台与双订单平台数据，开发近200字段宽表串联完整业务链路。构建LTV分析体系，数据一致性达99.8%，运营效率提升60%。</p>
+          <div class="timeline-tags"><span>SQL ETL</span><span>三层数仓</span><span>LTV分析</span><span>Quick BI</span></div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.09 - 2025.12</div>
+          <h3 class="timeline-title">数据分析 · 罗森</h3>
+          <p class="timeline-desc">运用RFM模型与ARPU分析评估用户价值，从GMV和利润双维度识别高价值用户与复购高峰，库存周转效率提升22%，积压库存占比降低18%。</p>
+          <div class="timeline-tags"><span>RFM</span><span>ARPU</span><span>Power BI</span><span>复购分析</span></div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.03 - 2025.09</div>
+          <h3 class="timeline-title">数据工程 · 罗森</h3>
+          <p class="timeline-desc">负责会员主题数仓开发，SeaTunnel数据抽取清洗，StarRocks四层架构设计，物化视图优化拉链表存储，Power BI构建8套动态报表，产出效率提升50%。</p>
+          <div class="timeline-tags"><span>StarRocks</span><span>SeaTunnel</span><span>Kettle</span><span>拉链表</span></div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2021 - 2025</div>
+          <h3 class="timeline-title">本科 · 黑龙江工业学院</h3>
+          <p class="timeline-desc">数据科学与大数据技术专业，系统学习统计学、数据库原理、数据挖掘与大数据技术栈。</p>
+          <div class="timeline-tags"><span>大数据</span><span>统计学</span><span>数据库</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section projects">
+  <div class="projects-bg-img"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">PROJECTS</span>
+      <h2 class="section-title">精选项目</h2>
+      <p class="section-desc">从数仓架构到业务分析，三个核心项目的完整交付。</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card large fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20warehouse%20architecture%20visualization%2C%20glowing%20blue%20data%20nodes%2C%20ETL%20pipeline%20flow%2C%20cinematic%20dark%20background%2C%20futuristic%20data%20engineering&image_size=landscape_16_9" alt="数据仓库" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA WAREHOUSE</span>
+            <span class="project-year">2026.03 - 2026.08</span>
+          </div>
+          <h3 class="project-title">榜样全链路数据仓库</h3>
+          <p class="project-desc">
+            主导设计三层数仓架构，整合5个广告平台与双订单平台数据，开发近200字段全链路宽表串联"订单→名片→合同→回款→退款"完整链路。构建首单新客30天LTV分析体系，实现投放ROI全流程可追溯，运营数据获取效率提升60%。
+          </p>
+          <div class="project-tags">
+            <span>SQL ETL</span><span>三层数仓架构</span><span>LTV分析</span>
+            <span>多源数据整合</span><span>Quick BI</span><span>存储过程</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20dashboard%20with%20glowing%20analytics%20charts%2C%20Power%20BI%20style%20data%20visualization%2C%20retail%20analytics%2C%20cinematic%20dark%20UI&image_size=landscape_16_9" alt="数仓分析平台" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA PLATFORM</span>
+            <span class="project-year">2025.03 - 2025.09</span>
+          </div>
+          <h3 class="project-title">罗森数仓分析平台</h3>
+          <p class="project-desc">
+            负责会员主题数仓开发，通过SeaTunnel进行数据抽取与清洗，在StarRocks设计四层架构，
+            采用物化视图优化拉链表存储，基于Power BI构建8套动态报表，报表产出效率提升50%。
+          </p>
+          <div class="project-tags">
+            <span>StarRocks</span><span>SeaTunnel</span><span>Power BI</span>
+            <span>Kettle</span><span>拉链表</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Abstract%20data%20analysis%20visualization%2C%20RFM%20model%20clustering%2C%20user%20value%20segments%2C%20glowing%20blue%20particles%2C%20dark%20background%2C%20tech%20art&image_size=landscape_16_9" alt="用户价值分析" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA ANALYSIS</span>
+            <span class="project-year">2025.09 - 2025.12</span>
+          </div>
+          <h3 class="project-title">罗森用户价值度分析</h3>
+          <p class="project-desc">
+            通过ARPU分析从GMV和利润双维度评估地区用户价值，运用RFM模型对用户分群并开展多维度偏好分析，
+            识别高价值用户与复购高峰月份，库存周转效率提升22%，积压库存占比降低18%。
+          </p>
+          <div class="project-tags">
+            <span>RFM</span><span>ARPU</span><span>复购分析</span>
+            <span>Power BI</span><span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section skills">
+  <div class="skills-bg-img"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">CAPABILITIES</span>
+      <h2 class="section-title">个人能力</h2>
+      <p class="section-desc">从数据采集到可视化交付的全栈能力。</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9881;</div>
+        <h4>数仓架构</h4>
+        <div class="skill-sub">DATA WAREHOUSE</div>
+        <p>独立完成ODS-DWD-ADS三层数仓架构设计，覆盖5个核心业务域，从0到1搭建标准化数据仓库。</p>
+        <div class="skill-list">
+          <span>分层建模</span><span>指标体系</span><span>存储过程</span><span>增量调度</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9747;</div>
+        <h4>ETL开发</h4>
+        <div class="skill-sub">DATA INTEGRATION</div>
+        <p>处理过多平台数据合并的脏活累活，5个广告平台+2个订单平台，字段映射、单位转换、字符集对齐全踩过坑。</p>
+        <div class="skill-list">
+          <span>SQL ETL</span><span>多源整合</span><span>数据清洗</span><span>增量更新</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9776;</div>
+        <h4>业务分析</h4>
+        <div class="skill-sub">BIZ ANALYTICS</div>
+        <p>不止于取数开发，能主动用LTV、RFM、ARPU等分析方法帮业务找问题，将数据转化为可落地的决策依据。</p>
+        <div class="skill-list">
+          <span>LTV</span><span>RFM</span><span>ARPU</span><span>复购分析</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9636;</div>
+        <h4>数据可视化</h4>
+        <div class="skill-sub">VISUALIZATION</div>
+        <p>基于Power BI构建8套动态报表，基于Quick BI搭建3套核心看板，支持管理层多粒度查看投放效果。</p>
+        <div class="skill-list">
+          <span>Power BI</span><span>Quick BI</span><span>看板设计</span><span>Kettle调度</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9650;</div>
+        <h4>SQL为核心</h4>
+        <div class="skill-sub">CORE TECH STACK</div>
+        <p>SQL是吃饭的家伙，熟练完成ETL开发、存储过程、多维聚合分析。同时掌握StarRocks、Hadoop、Hive生态。</p>
+        <div class="skill-list">
+          <span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>StarRocks</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">&#9679;</div>
+        <h4>结果导向</h4>
+        <div class="skill-sub">IMPACT DRIVEN</div>
+        <p>每段经历均有量化产出——运营效率提升60%、报表效率提升50%、库存周转提升22%，做事有始有终有结果。</p>
+        <div class="skill-list">
+          <span>量化产出</span><span>业务驱动</span><span>主动推动</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="contact-bg-img"></div>
+  <div class="contact-bg"></div>
+  <div class="contact-content">
+    <span class="section-tag fade-up">GET IN TOUCH</span>
+    <h1 class="contact-title fade-up">
+      让数据<br>
+      <span class="accent">说话</span>
+    </h1>
+    <p class="contact-desc fade-up">
+      如果你有数据工程或分析相关的合作需求，欢迎随时联系。
+    </p>
+    <div class="contact-methods fade-up">
+      <div class="contact-method">
+        <div class="icon">&#9742;</div>
+        <div class="label">PHONE</div>
+        <div class="value">18361288637</div>
+      </div>
+      <div class="contact-method">
+        <div class="icon">&#9993;</div>
+        <div class="label">EMAIL</div>
+        <div class="value">youla556wd@163.com</div>
+      </div>
+    </div>
+    <a href="mailto:youla556wd@163.com" class="contact-cta fade-up">
+      发送邮件
+      <span>&rarr;</span>
+    </a>
+  </div>
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="footer-nav">
+        <a href="articles.html">文章</a>
+        <a href="changelog.html">日志</a>
+        <a href="friends.html">友链</a>
+        <a href="moments.html">朋友圈</a>
+        <a href="guestbook.html">留言</a>
+      </div>
+      <div class="footer-stats">
+        <span>本站访客：<b>3,036</b></span>
+        <span>总访问：<b>20,294</b></span>
+      </div>
+      <div class="footer-copy">&copy; 2026 ZHENG NIANFENG · DATA ENGINEER</div>
+      <div class="footer-tech">
+        <span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span style="color: var(--accent);">OGURI × TAMAMO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ============ MOBILE MENU ============
+const menuToggle = document.getElementById('menuToggle');
+const navLinksEl = document.getElementById('navLinks');
+if (menuToggle && navLinksEl) {
+  menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('open');
+    navLinksEl.classList.toggle('open');
+  });
+  navLinksEl.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      menuToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+    });
+  });
+}
+
+// ============ LOADER ============
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hidden');
+    document.body.classList.add('loaded');
+  }, 500);
+});
+
+// ============ HERO CANVAS PARTICLE NETWORK ============
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: null, y: null, radius: 150 };
+  let rafId = null;
+  let isVisible = true;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      resize();
+      init();
+    }, 200);
+  });
+
+  var mouseTimer;
+  window.addEventListener('mousemove', function(e) {
+    if (mouseTimer) return;
+    mouseTimer = requestAnimationFrame(function() {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouseTimer = null;
+    });
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.size = Math.random() * 1.5 + 0.5;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      if (mouse.x) {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          let force = (mouse.radius - dist) / mouse.radius;
+          this.x -= dx * force * 0.02;
+          this.y -= dy * force * 0.02;
+        }
+      }
+    }
+    draw() {
+      ctx.fillStyle = 'rgba(204, 130, 174, 0.5)';
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    particles = [];
+    let count = Math.min(60, Math.floor(canvas.width * canvas.height / 18000));
+    for (let i = 0; i < count; i++) particles.push(new Particle());
+  }
+  init();
+
+  function connect() {
+    var len = particles.length;
+    for (var a = 0; a < len; a++) {
+      for (var b = a + 1; b < len; b++) {
+        var dx = particles[a].x - particles[b].x;
+        var dy = particles[a].y - particles[b].y;
+        var distSq = dx * dx + dy * dy;
+        if (distSq < 16900) {
+          var dist = Math.sqrt(distSq);
+          var op = (1 - dist / 130) * 0.15;
+          ctx.strokeStyle = 'rgba(204, 130, 174, ' + op + ')';
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    if (!isVisible) { rafId = null; return; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+    connect();
+    rafId = requestAnimationFrame(animate);
+  }
+  animate();
+
+  var heroObserver = new IntersectionObserver(function(entries) {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible && !rafId) animate();
+  }, { threshold: 0.05 });
+  heroObserver.observe(document.getElementById('hero'));
+})();
+
+// ============ SCROLL FADE-UP ============
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(function(el) {
+  observer.observe(el);
+});
+
+// ============ NAVBAR SCROLL + ACTIVE (throttled) ============
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('#navLinks a');
+const heroEl = document.getElementById('hero');
+const sectionIds = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
+var sectionEls = sectionIds.map(function(id) { return document.getElementById(id); });
+var triggerY = heroEl ? heroEl.offsetHeight - 120 : 60;
+var currentSection = 'hero';
+var scrollTicking = false;
+
+window.addEventListener('resize', function() {
+  triggerY = heroEl ? heroEl.offsetHeight - 120 : 60;
+});
+
+window.addEventListener('scroll', function() {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(function() {
+    var sy = window.scrollY;
+    if (sy > triggerY) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+
+    var scrollPos = sy + 140;
+    var current = 'hero';
+    for (var i = 0; i < sectionEls.length; i++) {
+      if (sectionEls[i] && sectionEls[i].offsetTop <= scrollPos) current = sectionIds[i];
+    }
+    if (current !== currentSection) {
+      currentSection = current;
+      navLinks.forEach(function(link) {
+        link.classList.toggle('active', link.dataset.section === current);
+      });
+    }
+    scrollTicking = false;
+  });
+});
+
+// ============ THEME TOGGLE ============
+const themes = [
+  { name: 'pink', accent: '#cc82ae' },
+  { name: 'lavender', accent: '#9b8ec7' },
+  { name: 'mint', accent: '#7ec8a0' },
+  { name: 'gold', accent: '#e8c870' },
+];
+let themeIdx = 0;
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+themeBtn.addEventListener('click', function() {
+  themeIdx = (themeIdx + 1) % themes.length;
+  const t = themes[themeIdx];
+  const accentRgb = hexToRgb(t.accent);
+  root.style.setProperty('--accent', t.accent);
+  root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.15)');
+  root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.08)');
+  root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.3)');
+});
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return r + ',' + g + ',' + b;
+}
+</script>
+
+</body>
+</html>

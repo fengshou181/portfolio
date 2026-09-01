@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章 | 郑年丰 - 数据工程师</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader">
+  <div class="loader-logo">ZF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">ZF</div>
+      <div class="nav-logo-text"><span class="name">郑年丰</span><span class="role">Data Engineer</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="index.html#about">关于</a>
+      <a href="index.html#experience">经历</a>
+      <a href="index.html#projects">项目</a>
+      <a href="index.html#skills">能力</a>
+      <a href="articles.html" class="active">文章</a>
+      <a href="index.html#contact">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <button class="nav-cta" onclick="window.location.href='index.html#contact'"><span class="dot"></span> 联系我</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-bg-right" style="background-image: url('images/oguri_tamamo_1.jpg');"></div>
+  <div class="page-bg-bottom-left" style="background-image: url('images/oguri_cap_2_opt.jpg');"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">ARTICLES</span>
+      <h1 class="section-title">文章</h1>
+      <p class="section-desc">数据工程笔记、技术复盘与生活随想。</p>
+    </div>
+
+    <div class="cat-tabs fade-up">
+      <span class="cat-tab active">归档 <span class="count">3</span></span>
+      <span class="cat-tab">数据工程 <span class="count">2</span></span>
+      <span class="cat-tab">数据可视化 <span class="count">1</span></span>
+      <span class="cat-tab">随笔 <span class="count">0</span></span>
+    </div>
+
+    <div class="articles-grid">
+      <div class="article-card fade-up">
+        <span class="article-pinned">置顶</span>
+        <div class="article-cover">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20data%20warehouse%20architecture%20diagram%20with%20glowing%20golden%20nodes%2C%20ETL%20flow%2C%20layered%20model%2C%20tech%20blog%20cover%2C%20cinematic&image_size=landscape_16_9" alt="文章封面">
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">DATA ENGINEERING</span>
+            <span class="article-date">2026.08.20</span>
+          </div>
+          <h3 class="article-title">从零搭建三层数仓的踩坑实录</h3>
+          <p class="article-excerpt">ODS-DWD-ADS 三层架构听起来标准，但实际落地时字段映射、单位转换、字符集对齐全是坑。本文复盘榜样数仓建设的完整过程。</p>
+          <div class="article-tags"><span>SQL</span><span>数仓</span><span>ETL</span></div>
+        </div>
+      </div>
+      <div class="article-card fade-up">
+        <div class="article-cover">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Abstract%20RFM%20model%20clustering%20visualization%2C%20user%20segments%20with%20golden%20particles%2C%20dark%20background%2C%20analytics%20blog%20cover&image_size=landscape_16_9" alt="文章封面">
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">DATA ANALYSIS</span>
+            <span class="article-date">2026.08.05</span>
+          </div>
+          <h3 class="article-title">LTV + RFM 双维度用户价值分析实战</h3>
+          <p class="article-excerpt">用 LTV 从 GMV 和利润两个维度评估用户价值，用 RFM 对用户分群识别高价值用户。罗森项目复盘，库存周转提升 22%。</p>
+          <div class="article-tags"><span>LTV</span><span>RFM</span><span>Power BI</span></div>
+        </div>
+      </div>
+      <div class="article-card fade-up">
+        <div class="article-cover">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20cinematic%20Power%20BI%20dashboard%20with%20golden%20accent%20charts%2C%20retail%20analytics%2C%20minimalist%20tech%20blog%20cover&image_size=landscape_16_9" alt="文章封面">
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">VISUALIZATION</span>
+            <span class="article-date">2026.07.15</span>
+          </div>
+          <h3 class="article-title">8 套动态报表的设计思路与拆解</h3>
+          <p class="article-excerpt">从需求对接到 Power BI 看板落地，如何让管理层 3 秒看懂核心指标。本文拆解 8 套报表的设计逻辑和 DAX 计算。</p>
+          <div class="article-tags"><span>Power BI</span><span>DAX</span><span>看板</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-static">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="articles.html">文章</a>
+      <a href="changelog.html">日志</a>
+      <a href="friends.html">友链</a>
+      <a href="moments.html">朋友圈</a>
+      <a href="guestbook.html">留言</a>
+    </div>
+    <div class="footer-stats"><span><b>访客</b> 1,024</span><span><b>浏览</b> 3,580</span><span><b>文章</b> 3</span></div>
+    <div class="footer-tech"><span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span>OGURI × TAMAMO</span></div>
+    <div class="footer-copy">© 2026 ZHENG NIANFENG. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>
