@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目 | 郑年丰</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-logo">ZF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">ZF</div>
+      <div class="nav-logo-text">
+        <span class="name">郑年丰</span>
+        <span class="role">DATA ENGINEER</span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于</a>
+      <a href="experience.html">经历</a>
+      <a href="projects.html" class="active">项目</a>
+      <a href="skills.html">能力</a>
+      <a href="contact.html">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <a href="contact.html" class="nav-cta">
+        <span class="dot"></span>
+        联系我
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section id="projects" class="section projects" style="padding-top: 120px;">
+  <div class="projects-bg-img"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">PROJECTS</span>
+      <h2 class="section-title">精选项目</h2>
+      <p class="section-desc">从数仓架构到业务分析，三个核心项目的完整交付。</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card large fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20warehouse%20architecture%20visualization%2C%20glowing%20blue%20data%20nodes%2C%20ETL%20pipeline%20flow%2C%20cinematic%20dark%20background%2C%20futuristic%20data%20engineering&image_size=landscape_16_9" alt="数据仓库" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA WAREHOUSE</span>
+            <span class="project-year">2026.03 - 2026.08</span>
+          </div>
+          <h3 class="project-title">榜样全链路数据仓库</h3>
+          <p class="project-desc">
+            主导设计三层数仓架构，整合5个广告平台与双订单平台数据，开发近200字段全链路宽表串联"订单→名片→合同→回款→退款"完整链路。构建首单新客30天LTV分析体系，实现投放ROI全流程可追溯，运营数据获取效率提升60%。
+          </p>
+          <div class="project-tags">
+            <span>SQL ETL</span><span>三层数仓架构</span><span>LTV分析</span>
+            <span>多源数据整合</span><span>Quick BI</span><span>存储过程</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20dashboard%20with%20glowing%20analytics%20charts%2C%20Power%20BI%20style%20data%20visualization%2C%20retail%20analytics%2C%20cinematic%20dark%20UI&image_size=landscape_16_9" alt="数仓分析平台" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA PLATFORM</span>
+            <span class="project-year">2025.03 - 2025.09</span>
+          </div>
+          <h3 class="project-title">罗森数仓分析平台</h3>
+          <p class="project-desc">
+            负责会员主题数仓开发，通过SeaTunnel进行数据抽取与清洗，在StarRocks设计四层架构，
+            采用物化视图优化拉链表存储，基于Power BI构建8套动态报表，报表产出效率提升50%。
+          </p>
+          <div class="project-tags">
+            <span>StarRocks</span><span>SeaTunnel</span><span>Power BI</span>
+            <span>Kettle</span><span>拉链表</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Abstract%20data%20analysis%20visualization%2C%20RFM%20model%20clustering%2C%20user%20value%20segments%2C%20glowing%20blue%20particles%2C%20dark%20background%2C%20tech%20art&image_size=landscape_16_9" alt="用户价值分析" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">DATA ANALYSIS</span>
+            <span class="project-year">2025.09 - 2025.12</span>
+          </div>
+          <h3 class="project-title">罗森用户价值度分析</h3>
+          <p class="project-desc">
+            通过ARPU分析从GMV和利润双维度评估地区用户价值，运用RFM模型对用户分群并开展多维度偏好分析，
+            识别高价值用户与复购高峰月份，库存周转效率提升22%，积压库存占比降低18%。
+          </p>
+          <div class="project-tags">
+            <span>RFM</span><span>ARPU</span><span>复购分析</span>
+            <span>Power BI</span><span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="articles.html">文章</a>
+      <a href="changelog.html">日志</a>
+      <a href="friends.html">友链</a>
+      <a href="moments.html">朋友圈</a>
+      <a href="guestbook.html">留言</a>
+    </div>
+    <div class="footer-stats">
+      <span>本站访客：<b>3,036</b></span>
+      <span>总访问：<b>20,294</b></span>
+    </div>
+    <div class="footer-copy">&copy; 2026 ZHENG NIANFENG · DATA ENGINEER</div>
+    <div class="footer-tech">
+      <span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span style="color: var(--accent);">OGURI × TAMAMO</span>
+    </div>
+  </div>
+</div>
+
+<script src="common.js"></script>
+</body>
+</html>
