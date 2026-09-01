@@ -132,7 +132,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
   border-radius: 100px; padding: 4px;
 }
 .nav-links a {
-  position: relative; padding: 10px 22px; font-size: 15px; color: var(--text-dim);
+  position: relative; padding: 12px 28px; font-size: 17px; color: var(--text-dim);
   transition: all 0.25s; font-weight: 500; border-radius: 100px; z-index: 1; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--text); background: rgba(120,100,145,0.06); }
