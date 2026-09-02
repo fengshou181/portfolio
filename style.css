@@ -457,43 +457,43 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
 }
 .about-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
-  padding: 32px; transition: all 0.3s; position: relative; overflow: hidden;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px;
+  padding: 40px; transition: all 0.3s; position: relative; overflow: hidden;
 }
 .about-card:hover {
   border-color: var(--border-hover); box-shadow: 0 8px 32px rgba(120,100,145,0.10);
   transform: translateY(-4px);
 }
 .about-card-header {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
-  padding-bottom: 20px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+  padding-bottom: 28px; border-bottom: 1px solid var(--border);
 }
 .about-card-num {
-  font-family: var(--font-display); font-size: 24px; font-weight: 700;
-  color: var(--accent); opacity: 0.5;
-  background: var(--accent-dim); width: 40px; height: 40px;
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 48px; font-weight: 700;
+  color: var(--accent); opacity: 0.3; line-height: 1;
+  background: var(--accent-dim); padding: 8px 20px;
+  border-radius: 16px;
 }
 .about-card-title {
-  font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text);
+  font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--text);
 }
 
 /* Card: Personal Info */
 .about-info-name {
-  font-family: var(--font-display); font-size: 32px; font-weight: 700;
-  color: var(--text); margin-bottom: 4px;
+  font-family: var(--font-display); font-size: 56px; font-weight: 700;
+  color: var(--text); margin-bottom: 8px; line-height: 1.1;
 }
 .about-info-role {
-  font-family: var(--font-mono); font-size: 12px; color: var(--accent);
-  letter-spacing: 1px; margin-bottom: 28px;
+  font-family: var(--font-mono); font-size: 16px; color: var(--accent);
+  letter-spacing: 2px; margin-bottom: 36px;
 }
-.about-contact-list { display: flex; flex-direction: column; gap: 14px; }
-.about-contact-item { display: flex; flex-direction: column; gap: 4px; }
+.about-contact-list { display: flex; flex-direction: column; gap: 24px; }
+.about-contact-item { display: flex; flex-direction: column; gap: 6px; }
 .about-contact-item .label {
-  font-family: var(--font-mono); font-size: 10px; color: var(--text-mute);
-  text-transform: uppercase; letter-spacing: 1.5px;
+  font-family: var(--font-mono); font-size: 14px; color: var(--text-mute);
+  text-transform: uppercase; letter-spacing: 3px;
 }
-.about-contact-item .value { font-size: 14px; color: var(--text); }
+.about-contact-item .value { font-size: 20px; color: var(--text); font-weight: 500; }
 
 /* Card: Stats */
 .about-stats-list { display: flex; flex-direction: column; gap: 20px; }
