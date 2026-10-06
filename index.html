@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -33,6 +33,7 @@
       <a href="about.html">关于</a>
       <a href="experience.html">经历</a>
       <a href="projects.html">项目</a>
+      <a href="ecommerce-dashboard.html">看板</a>
       <a href="skills.html">能力</a>
       <a href="contact.html">联系</a>
     </div>
@@ -73,7 +74,8 @@
       <div class="hero-cn-sub">fēng nián</div>
       <p class="hero-subtitle">
         1年数据工程实战经验，从数仓架构到ETL开发到可视化看板全链路交付。
-        擅长多源数据整合与用户价值分析，用数据为业务决策提供量化支撑。
+        主导多源电商数据整合平台，覆盖4大数据集1.35亿条记录，
+        擅长宽表建模与用户行为分析，用数据为业务决策提供量化支撑。
       </p>
     </div>
 
@@ -95,19 +97,103 @@
 
   <div class="hero-bottom-bar">
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">5+</div><div class="label">平台整合</div></div>
-      <div class="hero-stat"><div class="num">100W+</div><div class="label">数据量级</div></div>
+      <div class="hero-stat"><div class="num">1.35亿</div><div class="label">数据量级</div></div>
+      <div class="hero-stat"><div class="num">4套</div><div class="label">宽表建模</div></div>
       <div class="hero-stat"><div class="num">99.8%</div><div class="label">数据一致</div></div>
       <div class="hero-stat"><div class="num">60%</div><div class="label">效率提升</div></div>
     </div>
     <div class="hero-tech-strip">
-      <span>SQL</span><span>ETL</span><span>StarRocks</span><span>Power BI</span><span>Quick BI</span><span>Kettle</span>
+      <span>SQL</span><span>ETL</span><span>Apache Doris</span><span>StarRocks</span><span>宽表建模</span><span>Power BI</span><span>Chart.js</span>
     </div>
   </div>
 
   <div class="hero-scroll">
     <div class="line"></div>
     <div class="text">SCROLL</div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section id="featured-projects" class="section projects" style="padding: 120px 0;">
+  <div class="projects-bg-img"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">FEATURED WORK</span>
+      <h2 class="section-title">精选项目</h2>
+      <p class="section-desc">从全链路数仓到电商数据分析，用工程能力驱动业务价值。</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card large fade-up">
+        <a href="ecommerce-dashboard.html">
+          <div class="project-arrow">&#8599;</div>
+          <div class="project-img">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=E-commerce%20data%20analytics%20dashboard%2C%20purple%20gradient%20theme%2C%20sales%20charts%20and%20user%20behavior%20funnel%2C%20multiple%20datasets%20visualization%2C%20dark%20purple%20background%2C%20futuristic%20data%20UI&image_size=landscape_16_9" alt="多源电商数据分析平台" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">E-COMMERCE ANALYTICS</span>
+              <span class="project-year">2026.09 - 至今</span>
+            </div>
+            <h3 class="project-title">多源电商数据分析平台</h3>
+            <p class="project-desc">
+              基于 Apache Doris 构建多源电商数据整合分析平台，整合 Olist、Amazon、Instacart、淘宝四大数据集共计 1.35 亿条记录。
+              设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析与可视化看板。
+            </p>
+            <div class="project-tags">
+              <span>Apache Doris</span><span>宽表建模</span><span>EDA</span>
+              <span>用户行为分析</span><span>Chart.js</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="project-card fade-up">
+        <a href="projects.html">
+          <div class="project-arrow">&#8599;</div>
+          <div class="project-img">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20warehouse%20architecture%20visualization%2C%20glowing%20blue%20data%20nodes%2C%20ETL%20pipeline%20flow%2C%20cinematic%20dark%20background%2C%20futuristic%20data%20engineering&image_size=landscape_16_9" alt="榜样全链路数据仓库" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">DATA WAREHOUSE</span>
+              <span class="project-year">2026.03 - 2026.08</span>
+            </div>
+            <h3 class="project-title">榜样全链路数据仓库</h3>
+            <p class="project-desc">
+              三层数仓架构，整合5个广告平台与双订单平台，开发近200字段全链路宽表串联完整业务链路。
+            </p>
+            <div class="project-tags">
+              <span>SQL ETL</span><span>三层数仓</span><span>LTV分析</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="project-card fade-up">
+        <a href="projects.html">
+          <div class="project-arrow">&#8599;</div>
+          <div class="project-img">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Abstract%20data%20analysis%20visualization%2C%20RFM%20model%20clustering%2C%20user%20value%20segments%2C%20glowing%20blue%20particles%2C%20dark%20background%2C%20tech%20art&image_size=landscape_16_9" alt="罗森用户价值度分析" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">DATA ANALYSIS</span>
+              <span class="project-year">2025.09 - 2025.12</span>
+            </div>
+            <h3 class="project-title">罗森用户价值度分析</h3>
+            <p class="project-desc">
+              RFM模型用户分群与多维度偏好分析，库存周转效率提升22%，积压库存占比降低18%。
+            </p>
+            <div class="project-tags">
+              <span>RFM</span><span>ARPU</span><span>复购分析</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="projects.html" class="nav-cta" style="display:inline-flex; align-items:center; gap:8px;">
+        查看全部项目 &#8594;
+      </a>
+    </div>
   </div>
 </section>
 
@@ -127,7 +213,7 @@
     </div>
     <div class="footer-copy">&copy; 2026 FENG NIAN · DATA ENGINEER</div>
     <div class="footer-tech">
-      <span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span style="color: var(--accent);">OGURI × TAMAMO</span>
+      <span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span>Chart.js</span> · <span style="color: var(--accent);">OGURI × TAMAMO</span>
     </div>
   </div>
 </div>

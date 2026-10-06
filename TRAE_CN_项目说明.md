@@ -11,9 +11,10 @@
 | **项目名称** | 丰年作品集 (Portfolio) |
 | **类型** | 纯静态个人作品集网站 |
 | **技术栈** | HTML + CSS + 原生JavaScript（无框架） |
-| **页面数量** | 11个HTML页面 |
+| **页面数量** | 12个HTML页面 |
 | **所有者** | 郑年丰（丰年） |
 | **职业** | 数据工程师 / DATA ENGINEER |
+| **个人域名** | zfengnian.top |
 
 ---
 
@@ -21,33 +22,34 @@
 
 ```
 portfolio/
-├── index.html          # 首页（Hero + 概览 + 精选）
-├── about.html          # 关于我（个人介绍）
-├── skills.html         # 技能/能力展示
-├── experience.html     # 工作经历
-├── projects.html       # 项目作品
-├── articles.html       # 文章/博客
-├── moments.html        # 动态/说说
-├── friends.html        # 友情链接
-├── guestbook.html      # 留言板
-├── contact.html        # 联系方式
-├── changelog.html      # 更新日志
-├── style.css           # 全局样式（单文件，包含所有页面样式）
-├── common.js           # 通用脚本（导航、主题切换、加载动画等）
-├── images/             # 图片资源目录
-│   ├── hero_oguri.jpeg         # 首页Hero背景主图
-│   ├── hero-bg-new.jpeg        # 首页Hero背景图
-│   ├── about-bg.jpeg           # 关于页背景图
-│   ├── oguri_cap_2_opt.jpg     # 头像/头像装饰
-│   ├── oguri_tamamo_1.jpg      # 角色图1
-│   ├── oguri_tamamo_2.jpg      # 角色图2
-│   ├── oguri_tamamo_4k.jpg     # 4K角色图
-│   ├── tw_44.jpg               # 作品图
-│   ├── tw_44_opt.jpg           # 作品图（优化版）
-│   ├── m28.jpg                 # 角色图
-│   ├── m88.jpg                 # 角色图
-│   └── 128641800_p0.jpg        # 其他图片
-└── README.md           # 简单说明
+├── index.html              # 首页（Hero + 概览 + 精选）
+├── about.html              # 关于我（个人介绍）
+├── skills.html             # 技能/能力展示
+├── experience.html         # 工作经历
+├── projects.html           # 项目作品
+├── ecommerce-dashboard.html # 电商数据看板（新增）
+├── articles.html           # 文章/博客
+├── moments.html            # 动态/说说
+├── friends.html            # 友情链接
+├── guestbook.html          # 留言板
+├── contact.html            # 联系方式
+├── changelog.html          # 更新日志
+├── style.css               # 全局样式（单文件，包含所有页面样式）
+├── common.js               # 通用脚本（导航、主题切换、加载动画等）
+├── images/                 # 图片资源目录
+│   ├── hero_oguri.jpeg             # 首页Hero背景主图
+│   ├── hero-bg-new.jpeg            # 首页Hero背景图
+│   ├── about-bg.jpeg               # 关于页背景图
+│   ├── oguri_cap_2_opt.jpg         # 头像/头像装饰
+│   ├── oguri_tamamo_1.jpg          # 角色图1
+│   ├── oguri_tamamo_2.jpg          # 角色图2
+│   ├── oguri_tamamo_4k.jpg         # 4K角色图
+│   ├── tw_44.jpg                   # 作品图
+│   ├── tw_44_opt.jpg               # 作品图（优化版）
+│   ├── m28.jpg                     # 角色图
+│   ├── m88.jpg                     # 角色图
+│   └── 128641800_p0.jpg            # 其他图片
+└── README.md               # 简单说明
 ```
 
 ---
@@ -115,6 +117,7 @@ portfolio/
       <a href="about.html">关于</a>
       <a href="experience.html">经历</a>
       <a href="projects.html">项目</a>
+      <a href="ecommerce-dashboard.html">看板</a>
       <a href="skills.html">能力</a>
       <a href="contact.html">联系</a>
     </div>
@@ -133,6 +136,8 @@ portfolio/
 - 滚动时背景变化
 - 移动端汉堡菜单
 - 多主题切换按钮
+
+> ⚠️ 注意：次级页面（articles/moments/friends/guestbook/changelog）的导航链接指向 `index.html#锚点`，而非独立页面。
 
 ### 3. 页脚 (Footer)
 
@@ -199,32 +204,66 @@ portfolio/
 
 **主要内容**：项目卡片网格，展示个人项目
 
+**现有项目（4个）**：
+1. 榜样全链路数据仓库（large 大卡片）
+2. 罗森数仓分析平台
+3. 罗森用户价值度分析
+4. 多源电商数据分析平台（带"查看数据看板"按钮，链接到 ecommerce-dashboard.html）
+
 **常见修改**：
 - 添加新项目卡片
 - 更新项目描述
 - 替换项目截图
 
-### 6. articles.html - 文章
+### 6. ecommerce-dashboard.html - 电商数据看板
+
+**主要内容**：多源电商数据可视化分析看板
+
+**技术实现**：
+- Chart.js 4.x（CDN引入）
+- Tab 切换 4 个数据集
+- 22 张可视化图表 + 转化漏斗图
+
+**包含的数据集**：
+| 数据集 | 记录数 | 图表数 | 颜色主题 |
+|--------|--------|--------|----------|
+| Olist 巴西电商 | 11.2万订单项 | 6张 | 紫色 #7c5ca8 |
+| Amazon 评论 | 40.9万条 | 4张 | 橙色 #f97316 |
+| Instacart 生鲜 | 3381万商品项 | 6张 | 绿色 #10b981 |
+| 淘宝用户行为 | 1亿条 | 5张+漏斗 | 红色 #ef4444 |
+
+**页面结构**：
+- Hero 区域（标题 + 4个总览 KPI 卡片 + 数据集切换 Tab）
+- 4 个 chart-section（每个数据集一个，通过 Tab 切换显示）
+- 每个 section 包含：4个数据集 KPI + 图表网格 + 关键洞察卡片
+- Footer 页脚
+
+**数据来源**：静态数据，已通过 Apache Doris 宽表查询后硬编码。
+如需更新数据，修改对应 chart 的 `data.datasets[0].data` 和 `labels` 数组。
+
+**样式位置**：页面内联 `<style>` 标签，不影响全局 `style.css`。
+
+### 7. articles.html - 文章
 
 **主要内容**：博客文章列表
 
-### 7. moments.html - 动态
+### 8. moments.html - 动态
 
 **主要内容**：类似朋友圈/说说的短动态
 
-### 8. friends.html - 友链
+### 9. friends.html - 友链
 
 **主要内容**：友情链接列表
 
-### 9. guestbook.html - 留言板
+### 10. guestbook.html - 留言板
 
 **主要内容**：访客留言（静态展示，无后端）
 
-### 10. contact.html - 联系方式
+### 11. contact.html - 联系方式
 
 **主要内容**：邮箱、微信、GitHub等联系方式
 
-### 11. changelog.html - 更新日志
+### 12. changelog.html - 更新日志
 
 **主要内容**：网站版本更新记录
 
@@ -252,6 +291,8 @@ portfolio/
 <a href="newpage.html">新页面</a>
 ```
 
+> ⚠️ 注意：主页面（index/about/experience/projects/看板/skills/contact）和次级页面（articles/moments/friends/guestbook/changelog）的导航结构不同，需要分别更新。
+
 ### 添加新页面
 
 1. 复制一个现有页面（如 `about.html`）作为模板
@@ -273,6 +314,13 @@ portfolio/
 
 编辑 `projects.html`，复制一张项目卡片，修改标题、描述、图片和链接。
 
+### 更新电商数据看板数据
+
+1. 打开 `ecommerce-dashboard.html`
+2. 找到对应图表的 `new Chart(...)` 代码块
+3. 修改 `labels` 数组（X轴分类）和 `data.datasets[0].data` 数组（数值）
+4. 同步更新 KPI 卡片中的数值
+
 ---
 
 ## ⚡ 功能特性
@@ -286,6 +334,8 @@ portfolio/
 | Canvas粒子效果 | Canvas API | index.html内联脚本 |
 | 响应式布局 | CSS Media Query | style.css |
 | 平滑滚动 | CSS | style.css |
+| 数据可视化图表 | Chart.js 4.x | ecommerce-dashboard.html |
+| 数据集Tab切换 | 原生JS | ecommerce-dashboard.html |
 
 ---
 
@@ -310,10 +360,11 @@ python -m http.server 8000
 
 1. **纯静态站点**：没有后端，所有内容都是硬编码在HTML中的
 2. **单CSS文件**：所有页面共用一个 `style.css`，修改时注意影响范围
-3. **单JS文件**：所有页面共用一个 `common.js`
+3. **单JS文件**：所有页面共用一个 `common.js`（看板页面的图表脚本内联在页面内）
 4. **Google Fonts**：依赖外部字体，离线环境字体会降级
 5. **无构建工具**：不需要 npm/webpack 等，直接改HTML/CSS/JS即可
 6. **日系动漫风格**：大量使用动漫角色图，图片版权需注意
+7. **电商看板数据**：当前为静态硬编码，如需实时数据需对接后端 API
 
 ---
 
@@ -327,9 +378,11 @@ python -m http.server 8000
 | 技能列表 | skills.html | 搜"技能"或"skill" |
 | 工作经历 | experience.html | 搜公司名或"经历" |
 | 项目展示 | projects.html | 搜项目名或"项目" |
+| 数据看板 | ecommerce-dashboard.html | 搜"看板"或数据集名 |
 | 联系方式 | contact.html | 搜"联系"或邮箱 |
 | 加载动画Logo | 所有HTML | `loader-logo` |
 | 页脚版权 | 所有HTML | `footer` |
+| 图表数据 | ecommerce-dashboard.html | 搜对应图表ID（如 `olistMonthly`） |
 
 ---
 
