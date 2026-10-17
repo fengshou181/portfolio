@@ -224,7 +224,7 @@ portfolio/
 - Tab 切换 4 个数据集
 - 22 张可视化图表 + 转化漏斗图
 
-**包含的数据集**：
+**包含的数据集**（记录数口径以 `docs/DATA_STATS.md` 为准，该文件由 `scripts/refresh_stats.py` 自动生成）：
 | 数据集 | 记录数 | 图表数 | 颜色主题 |
 |--------|--------|--------|----------|
 | Olist 巴西电商 | 11.2万订单项 | 6张 | 紫色 #7c5ca8 |
@@ -238,8 +238,8 @@ portfolio/
 - 每个 section 包含：4个数据集 KPI + 图表网格 + 关键洞察卡片
 - Footer 页脚
 
-**数据来源**：静态数据，已通过 Apache Doris 宽表查询后硬编码。
-如需更新数据，修改对应 chart 的 `data.datasets[0].data` 和 `labels` 数组。
+**数据来源**：外置数据文件 `dashboard-data.js`（`window.DASHBOARD_DATA`），由 `scripts/16_refresh_dashboard_data.py` 查询 Apache Doris 宽表自动生成（含生成时间戳，口径核对 28/28 一致）。
+页面优先读取外置数据，文件缺失时自动回退到内置数据。更新数据：重跑刷新脚本后 commit + push 即可全量更新。
 
 **样式位置**：页面内联 `<style>` 标签，不影响全局 `style.css`。
 
