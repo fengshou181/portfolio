@@ -1,0 +1,18 @@
+# Cloudflare Pages 缓存策略
+# 静态资源：内容稳定，长缓存
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/style.css
+  Cache-Control: public, max-age=86400
+
+/common.js
+  Cache-Control: public, max-age=86400
+
+# 看板数据：随刷新脚本更新，短缓存
+/dashboard-data.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+# HTML：每次校验，保证新部署即时可见
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
