@@ -51,7 +51,7 @@
     <div class="section-header fade-up">
       <span class="section-tag">PROJECTS</span>
       <h2 class="section-title">精选项目</h2>
-      <p class="section-desc">从数仓架构到业务分析，三个核心项目的完整交付。</p>
+      <p class="section-desc">从数仓架构、业务分析到 AI 问答，核心项目的完整交付。</p>
     </div>
     <div class="projects-grid">
       <div class="project-card large fade-up">
@@ -128,9 +128,9 @@
           </div>
           <h3 class="project-title">多源电商数据分析平台</h3>
           <p class="project-desc">
-            基于 Apache Doris 构建多源电商数据整合分析平台，整合 Olist 巴西电商、Amazon 评论、Instacart 生鲜杂货、淘宝用户行为四大数据集，
-            共计约 1.35 亿条记录。设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析，
-            覆盖销售趋势、品类结构、地域分布、用户行为转化漏斗等多维洞察。
+            基于 Apache Doris 构建多源电商数据整合分析平台，整合 Olist 巴西电商、Amazon 评论、Instacart 生鲜杂货、淘宝用户行为四大数据集及京东商品样本，
+            25 张表累计 2.75 亿条记录。设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析，
+            覆盖销售趋势、品类结构、地域分布、用户行为转化漏斗等多维洞察；看板数据由 Doris 实时驱动。
           </p>
           <div class="project-tags">
             <span>Apache Doris</span><span>宽表建模</span><span>EDA</span>
@@ -138,6 +138,31 @@
           </div>
           <a href="ecommerce-dashboard.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:14px; font-weight:500; color: var(--accent);">
             查看数据看板 &#8599;
+          </a>
+        </div>
+      </div>
+      <div class="project-card large fade-up">
+        <div class="project-arrow">&#8599;</div>
+        <div class="project-img">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Conversational%20AI%20data%20assistant%20interface%2C%20natural%20language%20to%20SQL%20query%20flow%2C%20vector%20database%20retrieval%20visualization%2C%20soft%20purple%20pink%20gradient%2C%20futuristic%20chatbot%20UI&image_size=landscape_16_9" alt="RAG 智能问答" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">RAG · TEXT-TO-SQL</span>
+            <span class="project-year">2026.10</span>
+          </div>
+          <h3 class="project-title">电商数仓智能问答系统</h3>
+          <p class="project-desc">
+            基于本地 LLM 与向量检索的 Text-to-SQL 系统：中文提问自动检索库表结构、生成并校验 SQL、查询 Doris 数仓直出结果，全链路本地零数据外发。
+            建立 30 用例评测集驱动优化，知识库 25 表全覆盖 + 库路由检索后，执行成功率 100%、准确率 86.7%、P50 延迟 1.1s；
+            通过模型 A/B 评测完成 3b/7b 选型，并落地 sqlglot 白名单、只读账号、防注入三层安全机制。
+          </p>
+          <div class="project-tags">
+            <span>Ollama</span><span>Chroma</span><span>Text-to-SQL</span>
+            <span>评测驱动</span><span>Streamlit</span><span>sqlglot</span>
+          </div>
+          <a href="rag-benchmark.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:14px; font-weight:500; color: var(--accent);">
+            查看评测报告 &#8599;
           </a>
         </div>
       </div>
