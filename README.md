@@ -17,7 +17,7 @@ python -m http.server 8000
 ## 部署流程
 
 1. 修改文件后 `git add . && git commit -m "更新" && git push`
-2. Cloudflare Pages Git 集成自动构建部署，约 1 分钟生效
+2. Cloudflare Pages Git 集成自动构建部署；无需额外的 GitHub Actions 部署工作流
 3. CDN 缓存可能导致更新延迟，必要时在 Cloudflare 控制台手动清缓存
 
 ## 电商数据看板
