@@ -1052,6 +1052,20 @@ body.about-page {
   font-family: "Microsoft YaHei", "微软雅黑", "Noto Sans SC", sans-serif;
 }
 
+/* Keep the primary action intact when the long Chinese navigation reaches
+   a narrow desktop viewport. */
+.about-page .nav-cta {
+  flex: 0 0 auto;
+  min-width: 92px;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+@media (max-width: 1500px) and (min-width: 901px) {
+  .about-page .nav-links a { padding-left: 22px; padding-right: 22px; }
+  .about-page .nav-inner { padding-left: 18px; padding-right: 18px; }
+}
+
 .about-page .about-hero {
   min-height: 640px;
   margin-top: 80px;
