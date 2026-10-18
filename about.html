@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="about-page">
 
 <div class="loader" id="loader">
   <div class="loader-logo">FN</div>
@@ -63,7 +63,18 @@
       </a>
     </div>
     <div class="about-hero-right fade-up">
-      <div class="about-hero-image"></div>
+      <span class="about-hero-frame about-hero-frame-back" aria-hidden="true"></span>
+      <span class="about-hero-frame about-hero-frame-front" aria-hidden="true"></span>
+      <div class="about-hero-image">
+        <img src="images/about-portrait.jpeg" alt="丰年的形象视觉" loading="eager">
+        <span class="about-portrait-scan" aria-hidden="true"></span>
+        <span class="about-portrait-corner" aria-hidden="true"></span>
+        <div class="about-portrait-meta">
+          <span>IDENTITY / 01</span>
+          <strong>F.N.</strong>
+        </div>
+        <div class="about-portrait-status"><i></i> VISUAL PROFILE ONLINE</div>
+      </div>
     </div>
   </div>
 </section>
