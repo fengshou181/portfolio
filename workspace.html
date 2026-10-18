@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工作台 | 丰年</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ai-copilot.css">
+<style>
+  .ws-hero { padding: 140px 0 24px; }
+  .ws-wrap {
+    display: grid; grid-template-columns: 240px minmax(0,1fr) 300px; gap: 16px;
+    margin: 24px 0 60px; align-items: start;
+  }
+  .ws-col { border: 1px solid var(--border); background: var(--bg-card); position: relative; }
+  .ws-col::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: var(--accent); opacity:.6; }
+  .ws-col-head {
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.5px;
+    color: var(--text-dim); text-transform: uppercase;
+    display:flex; justify-content: space-between; align-items:center;
+  }
+  .ws-main { min-height: 480px; display: flex; flex-direction: column; }
+  .ws-thread { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; max-height: 62vh; }
+  .ws-input-row { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
+  .ws-side-list { padding: 6px 0; }
+  .ws-side-list .ds-row { padding: 10px 14px; }
+  .ws-side-note { padding: 12px 14px; font-size: 12px; color: var(--text-mute); line-height: 1.8; border-top: 1px dashed var(--border); }
+  .ws-kv { padding: 10px 14px; font-family: var(--font-mono); font-size: 11px; line-height: 2; color: var(--text-mute); border-bottom: 1px solid rgba(38,50,61,0.5); }
+  .ws-kv b { color: var(--text-dim); font-weight: 500; }
+  @media (max-width: 1100px) { .ws-wrap { grid-template-columns: 1fr; } .ws-main { min-height: 420px; order: -1; } }
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-logo">FN</div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">FN</div>
+      <div class="nav-logo-text">
+        <span class="name">丰年</span>
+        <span class="role">DATA ENGINEER</span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于</a>
+      <a href="experience.html">经历</a>
+      <a href="projects.html">项目</a>
+      <a href="ecommerce-dashboard.html">看板</a>
+      <a href="workspace.html" class="active">AI 工作台</a>
+      <a href="skills.html">能力</a>
+      <a href="contact.html">联系</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">&#9681;</button>
+      <a href="contact.html" class="nav-cta">
+        <span class="dot"></span>
+        联系我
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="ws-hero">
+  <div class="container">
+    <div class="sys-bar">
+      <div class="sys-left">
+        <span class="sys-brand">AI WORKSPACE</span>
+        <span class="status-tag ok" id="wsState">READY</span>
+      </div>
+      <div class="sys-right">
+        <span>MODEL qwen2.5:3b</span>
+        <span>数据快照 2026-10-18</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="ws-wrap">
+
+      <!-- Left: datasets -->
+      <div class="ws-col">
+        <div class="ws-col-head"><span>数据集</span></div>
+        <div class="ws-side-list">
+          <div class="ds-row"><span class="ds-name" style="width:auto;">olist</span><span class="status-tag ok">READY</span></div>
+          <div class="ds-row"><span class="ds-name" style="width:auto;">amazon</span><span class="status-tag ok">READY</span></div>
+          <div class="ds-row"><span class="ds-name" style="width:auto;">instacart</span><span class="status-tag ok">READY</span></div>
+          <div class="ds-row"><span class="ds-name" style="width:auto;">taobao</span><span class="status-tag warn">SNAPSHOT</span></div>
+        </div>
+        <div class="ws-col-head" style="border-top:1px solid var(--border);"><span>服务信息</span></div>
+        <div class="ws-kv">
+          检索 <b>三级路由</b><br>
+          校验 <b>sqlglot AST</b><br>
+          账号 <b>rag_readonly</b><br>
+          LIMIT <b>100 行封顶</b>
+        </div>
+        <div class="ws-side-note">
+          演示模式：未配置 AI 网关时展示 mock 流程；部署 <code>server/</code> FastAPI 后自动切换真实查询。
+        </div>
+      </div>
+
+      <!-- Center: QA thread -->
+      <div class="ws-col ws-main">
+        <div class="ws-col-head"><span>问答 / QUERY</span><span class="status-tag info">Text-to-SQL</span></div>
+        <div class="ws-thread" id="wsThread">
+          <div class="aic-empty"><div class="big">◈</div>输入中文问题，系统将检索 Schema → 生成 SQL → 校验 → 查询 Doris</div>
+        </div>
+        <div class="ws-input-row">
+          <input class="aic-input" id="wsInput" type="text" maxlength="500" placeholder="> 例如：查询 Olist 已交付订单的客单价">
+          <button class="aic-send" id="wsSend">发送</button>
+        </div>
+      </div>
+
+      <!-- Right: metrics dictionary -->
+      <div class="ws-col">
+        <div class="ws-col-head"><span>指标口径速查</span><a href="rag-benchmark.html" style="color:var(--accent); font-size:10px;">评测 →</a></div>
+        <div class="ws-kv">
+          <b>GMV</b><br>SUM(price + freight_value)，状态过滤见问题<br><br>
+          <b>客单价 AOV</b><br>SUM(price) / COUNT(DISTINCT order_id)，订单级聚合<br><br>
+          <b>复购率</b><br>用户级：重复购买用户 / 全部用户<br>商品项级 ≠ 用户复购率<br><br>
+          <b>中文长度</b><br>CHAR_LENGTH（非字节长度）
+        </div>
+        <div class="ws-side-note">
+          全部口径与 <code>docs/METRICS.md</code> 对齐；AI 回答会标注本次使用的来源表与口径。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="articles.html">文章</a>
+      <a href="changelog.html">日志</a>
+      <a href="friends.html">友链</a>
+      <a href="moments.html">朋友圈</a>
+      <a href="guestbook.html">留言</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 FENG NIAN · DATA ENGINEER</div>
+    <div class="footer-tech">
+      <span>Ollama</span> · <span>Chroma</span> · <span>sqlglot</span> · <span style="color: var(--accent);">AI WORKSPACE</span>
+    </div>
+  </div>
+</div>
+
+<script src="common.js"></script>
+<script>
+(function () {
+  var thread = document.getElementById('wsThread');
+  var input = document.getElementById('wsInput');
+  var send = document.getElementById('wsSend');
+  var state = document.getElementById('wsState');
+
+  function el(html) { var d = document.createElement('div'); d.innerHTML = html; return d.firstElementChild; }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  var MOCKS = [
+    { match: /GMV|销售额/i, r: {
+      answer: '结论：Olist 已交付订单 GMV 为 R$ 15,842,009.12（含运费），覆盖 96,478 笔订单。',
+      columns: ['delivered_gmv', 'orders'], rows: [['R$ 15,842,009.12', '96,478']],
+      sql: "SELECT ROUND(SUM(price + freight_value), 2) AS delivered_gmv,\n       COUNT(DISTINCT order_id) AS orders\nFROM olist.olist_order_item_wide\nWHERE order_status = 'delivered';",
+      source: 'olist.olist_order_item_wide',
+      metric_definition: "order_status='delivered'，SUM(price+freight_value)，含运费", elapsed_ms: 1420 } },
+    { match: /客单价|AOV|aov/, r: {
+      answer: '结论：Olist 已交付订单客单价 R$ 133.82（订单级聚合，不含运费）。',
+      columns: ['delivered_aov'], rows: [['R$ 133.82']],
+      sql: "SELECT ROUND(SUM(price) / COUNT(DISTINCT order_id), 2) AS delivered_aov\nFROM olist.olist_order_item_wide\nWHERE order_status = 'delivered';",
+      source: 'olist.olist_order_item_wide',
+      metric_definition: 'SUM(price) / COUNT(DISTINCT order_id)，订单粒度', elapsed_ms: 1310 } },
+    { match: /转化|淘宝|taobao/i, r: {
+      answer: '结论：淘宝 PV→购买转化率 2.25%，加购→购买 36.4%，符合电商常见区间。',
+      columns: ['behavior', 'cnt', 'rate'],
+      rows: [['pv', '89,716,264', '100%'], ['cart', '5,530,446', '6.17%'], ['fav', '2,888,258', '3.22%'], ['buy', '2,015,839', '2.25%']],
+      sql: "SELECT behavior_type, COUNT(*) AS cnt,\n       ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS rate\nFROM taobao.user_behavior_wide\nGROUP BY behavior_type ORDER BY cnt DESC;",
+      source: 'taobao.user_behavior_wide', metric_definition: 'behavior_type 计数占比', elapsed_ms: 2380 } }
+  ];
+
+  function mockFor(q) {
+    for (var i = 0; i < MOCKS.length; i++) if (MOCKS[i].match.test(q)) return MOCKS[i].r;
+    return { answer: '结论：演示模式下返回占位回答。部署 server/ FastAPI 网关后，此问题将真实查询 Doris。',
+      columns: null, rows: null, sql: null, source: 'mock', metric_definition: '演示数据', elapsed_ms: 320 };
+  }
+
+  function setSt(s, cls) { state.textContent = s; state.className = 'status-tag ' + cls; }
+
+  function render(container, r) {
+    var html = '<div class="aic-answer-summary">' + esc(r.answer) + '</div>';
+    if (r.rows && r.columns) {
+      html += '<div class="aic-table-wrap"><table class="aic-table"><thead><tr>';
+      r.columns.forEach(function (c) { html += '<th>' + esc(c) + '</th>'; });
+      html += '</tr></thead><tbody>';
+      r.rows.forEach(function (row) { html += '<tr>' + row.map(function (v) { return '<td>' + esc(v) + '</td>'; }).join('') + '</tr>'; });
+      html += '</tbody></table></div>';
+    }
+    html += '<div class="aic-meta">' +
+      '<span>来源 <b>' + esc(r.source) + '</b></span>' +
+      '<span>口径 <b>' + esc(r.metric_definition) + '</b></span>' +
+      '<span>耗时 <b>' + r.elapsed_ms + 'ms</b></span>' +
+      '<span>快照 <b>2026-10-18</b></span></div>';
+    if (r.sql) html += '<div class="aic-sql"><button class="aic-sql-toggle" type="button">查看 SQL<span>▸</span></button><pre>' + esc(r.sql) + '</pre></div>';
+    html += '<div class="aic-actions"><button class="aic-btn" data-act="copy">复制 SQL</button></div>';
+    container.innerHTML = html;
+    var box = container.querySelector('.aic-sql');
+    if (box) box.querySelector('.aic-sql-toggle').addEventListener('click', function () { box.classList.toggle('open'); });
+    var cp = container.querySelector('[data-act="copy"]');
+    if (cp) cp.addEventListener('click', function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(r.sql || '');
+      cp.textContent = '已复制 ✓'; setTimeout(function () { cp.textContent = '复制 SQL'; }, 1500);
+    });
+  }
+
+  function ask() {
+    var q = input.value.trim();
+    if (!q) return;
+    var empty = thread.querySelector('.aic-empty'); if (empty) empty.remove();
+    var qa = el('<div class="aic-qa"><div class="aic-q"><span class="p">&gt;</span><span></span></div></div>');
+    qa.querySelector('.aic-q span:last-child').textContent = q;
+    var a = el('<div class="aic-a"></div>');
+    qa.appendChild(a);
+    thread.appendChild(qa);
+    input.value = '';
+    thread.scrollTop = thread.scrollHeight;
+
+    var steps = el('<div class="aic-steps"></div>');
+    ['THINKING', 'VALIDATING', 'QUERYING'].forEach(function (n) {
+      steps.appendChild(el('<div class="aic-step" data-step="' + n + '"><span class="st-dot"></span><span>' + n + '</span></div>'));
+    });
+    a.appendChild(steps);
+    setSt('THINKING', 'info');
+    var s1 = steps.querySelector('[data-step="THINKING"]'); s1.classList.add('active');
+    setTimeout(function () { s1.classList.replace('active', 'done'); setSt('VALIDATING', 'info');
+      var s2 = steps.querySelector('[data-step="VALIDATING"]'); s2.classList.add('active');
+      setTimeout(function () { s2.classList.replace('active', 'done'); setSt('QUERYING', 'info');
+        var s3 = steps.querySelector('[data-step="QUERYING"]'); s3.classList.add('active');
+        setTimeout(function () { s3.classList.replace('active', 'done'); setSt('RESULT', 'ok');
+          render(a, mockFor(q)); thread.scrollTop = thread.scrollHeight;
+        }, 700);
+      }, 450);
+    }, 500);
+  }
+
+  send.addEventListener('click', ask);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') ask(); });
+})();
+</script>
+</body>
+</html>

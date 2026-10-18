@@ -1,0 +1,51 @@
+/* Layered architectural data blocks for the homepage hero only. */
+#hero.hero { background: #080d14; isolation: isolate; }
+#hero .hero-spatial { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; perspective: 1050px; background: linear-gradient(115deg, #080d14 0%, #0b1721 55%, #081119 100%); }
+#hero .hero-spatial::before { content: ''; position: absolute; inset: 0; opacity: .26; background-image: linear-gradient(rgba(67,126,143,.2) 1px, transparent 1px), linear-gradient(90deg,rgba(67,126,143,.2) 1px,transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(90deg,transparent 16%,black 83%); }
+#hero .hero-spatial__floor { position: absolute; width: 950px; height: 700px; top: 47%; right: -180px; transform: rotateX(72deg); transform-origin: 50% 0; border: 1px solid rgba(86,175,193,.2); background-image: linear-gradient(rgba(74,151,168,.24) 1px,transparent 1px),linear-gradient(90deg,rgba(74,151,168,.24) 1px,transparent 1px); background-size: 55px 55px; box-shadow: 0 0 90px rgba(38,129,151,.13); animation: heroSpatialGrid 22s linear infinite; }
+#hero .hero-spatial__rig { position: absolute; width: 780px; height: 670px; top: 7%; right: clamp(100px,14vw,235px); transform-style: preserve-3d; --pointer-x: 0px; --pointer-y: 0px; --tilt-x: 0deg; --tilt-y: 0deg; transform: translate3d(var(--pointer-x),var(--pointer-y),0) rotateX(calc(-10deg + var(--tilt-x))) rotateY(calc(-24deg + var(--tilt-y))); animation: heroSpatialFloat 12s ease-in-out infinite alternate; }
+#hero .hero-spatial__frame { position: absolute; border: 1px solid rgba(93,181,194,.39); box-shadow: 0 0 16px rgba(49,167,197,.08); transform-style: preserve-3d; }
+#hero .hero-spatial__frame::before,#hero .hero-spatial__frame::after { content: ''; position: absolute; width: 13px; height: 13px; border: 2px solid rgba(96,214,220,.76); }
+#hero .hero-spatial__frame::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+#hero .hero-spatial__frame::after { right: -5px; bottom: -5px; border-top: 0; border-left: 0; }
+#hero .hero-spatial__frame--far { left: 148px; top: 18px; width: 450px; height: 505px; transform: translateZ(-175px); opacity: .47; }
+#hero .hero-spatial__frame--mid { left: 212px; top: 62px; width: 447px; height: 464px; transform: translateZ(-65px); opacity: .67; }
+#hero .hero-spatial__frame--near { left: 280px; top: 107px; width: 426px; height: 420px; transform: translateZ(42px); opacity: .72; }
+#hero .hero-spatial__frame--mid { animation: heroSpatialFrame 7s ease-in-out infinite alternate; }
+#hero .hero-spatial__block { --w: 190px; --h: 135px; --d: 80px; position: absolute; width: var(--w); height: var(--h); transform-style: preserve-3d; }
+#hero .hero-spatial__block>span { display: block; position: absolute; border: 1px solid rgba(103,195,208,.65); backface-visibility: hidden; }
+#hero .hero-spatial__front { width: var(--w); height: var(--h); transform: translateZ(calc(var(--d) / 2)); background: #1a3b4d; box-shadow: inset 0 0 0 8px rgba(8,25,34,.55),0 0 28px rgba(45,190,214,.12); }
+#hero .hero-spatial__side { width: var(--d); height: var(--h); left: calc((var(--w) - var(--d)) / 2); transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); background: #102836; }
+#hero .hero-spatial__top { width: var(--w); height: var(--d); top: calc((var(--h) - var(--d)) / 2); transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); background: #376c7d; border-color: rgba(147,222,225,.8) !important; }
+#hero .hero-spatial__block--rear { --w: 230px; --h: 67px; --d: 48px; left: 125px; top: 120px; transform: translateZ(-120px); opacity: .57; }
+#hero .hero-spatial__block--source { --w: 172px; --h: 132px; --d: 88px; left: 172px; top: 318px; transform: translateZ(55px); }
+#hero .hero-spatial__block--source { animation: heroSpatialSource 8s ease-in-out infinite alternate; }
+#hero .hero-spatial__block--source .hero-spatial__front { background: repeating-linear-gradient(0deg,transparent 0 27px,rgba(76,172,195,.16) 28px 29px),#1d394b; }
+#hero .hero-spatial__block--core { --w: 245px; --h: 244px; --d: 120px; left: 357px; top: 177px; transform: translateZ(154px); }
+#hero .hero-spatial__block--core { animation: heroSpatialCore 9s ease-in-out infinite alternate; }
+#hero .hero-spatial__block--core .hero-spatial__front { display: flex; align-items: end; gap: 14px; padding: 46px 30px 40px; border-color: rgba(111,230,237,.93); background: linear-gradient(145deg,#26566a,#133847); box-shadow: inset 0 0 0 10px rgba(9,41,53,.58),0 0 34px rgba(41,211,255,.18); }
+#hero .hero-spatial__block--core .hero-spatial__front i { display: block; flex: 1; height: 35%; background: rgba(69,195,216,.57); box-shadow: 0 0 12px rgba(49,197,223,.24); }
+#hero .hero-spatial__block--core .hero-spatial__front i:nth-child(2) { height: 62%; background: rgba(94,163,190,.73); }
+#hero .hero-spatial__block--core .hero-spatial__front i:nth-child(3) { height: 48%; }
+#hero .hero-spatial__block--core .hero-spatial__front i:nth-child(4) { height: 80%; background: rgba(94,163,190,.73); }
+#hero .hero-spatial__block--core .hero-spatial__front i:nth-child(5) { height: 67%; }
+#hero .hero-spatial__block--core .hero-spatial__front i { transform-origin: bottom center; animation: heroSpatialBars 4.8s ease-in-out infinite alternate; }
+#hero .hero-spatial__block--core .hero-spatial__front i:nth-child(2n) { animation-delay: -2s; }
+#hero .hero-spatial__block--core .hero-spatial__top { background: #458295; }
+#hero .hero-spatial__block--ai { --w: 95px; --h: 74px; --d: 60px; left: 605px; top: 428px; transform: translateZ(215px); }
+#hero .hero-spatial__block--ai { animation: heroSpatialAi 6s ease-in-out infinite alternate; }
+#hero .hero-spatial__block--ai>span { border-color: rgba(242,186,116,.78); }
+#hero .hero-spatial__block--ai .hero-spatial__front { background: #6d5034; box-shadow: inset 0 0 0 7px rgba(64,42,27,.38),0 0 22px rgba(241,174,97,.16); }
+#hero .hero-spatial__block--ai .hero-spatial__side { background: #44372c; }
+#hero .hero-spatial__block--ai .hero-spatial__top { background: #aa8050; border-color: #ecc28c !important; }
+#hero .hero-overlay { background: linear-gradient(90deg,rgba(8,13,20,.98) 0%,rgba(8,13,20,.94) 25%,rgba(8,13,20,.63) 45%,rgba(8,13,20,.06) 76%,rgba(8,13,20,.16) 100%),linear-gradient(180deg,rgba(8,13,20,.13),transparent 38%,rgba(8,13,20,.59) 100%); pointer-events: none; }
+@keyframes heroSpatialFloat { from { transform: translate3d(var(--pointer-x),var(--pointer-y),0) rotateX(calc(-10deg + var(--tilt-x))) rotateY(calc(-24deg + var(--tilt-y))); } to { transform: translate3d(var(--pointer-x),calc(var(--pointer-y) - 14px),0) rotateX(calc(-7deg + var(--tilt-x))) rotateY(calc(-20deg + var(--tilt-y))); } }
+@keyframes heroSpatialGrid { to { background-position: 0 55px,55px 0; } }
+@keyframes heroSpatialFrame { to { opacity: .95; box-shadow: 0 0 25px rgba(64,207,219,.2); } }
+@keyframes heroSpatialSource { to { transform: translateZ(55px) translateY(-10px); } }
+@keyframes heroSpatialCore { to { transform: translateZ(169px) translateY(-9px); } }
+@keyframes heroSpatialAi { to { transform: translateZ(235px) translateY(-14px); } }
+@keyframes heroSpatialBars { to { transform: scaleY(.72); opacity: .72; } }
+@media (max-width: 1050px) { #hero .hero-spatial__rig { right: -250px; opacity: .68; } #hero .hero-overlay { background: linear-gradient(90deg,rgba(8,13,20,.98) 0%,rgba(8,13,20,.93) 49%,rgba(8,13,20,.53) 100%),linear-gradient(180deg,transparent 32%,rgba(8,13,20,.7)); } }
+@media (max-width: 700px) { #hero .hero-spatial__rig { top: 100px; right: -205px; opacity: .46; transform: scale(.8) rotateX(-10deg) rotateY(-24deg); transform-origin: right top; animation: none; } #hero .hero-spatial__floor { right: -400px; top: 220px; opacity: .36; } #hero .hero-overlay { background: linear-gradient(180deg,rgba(8,13,20,.85) 0%,rgba(8,13,20,.75) 28%,rgba(8,13,20,.89) 54%,#080d14 100%); } }
+@media (prefers-reduced-motion: reduce) { #hero .hero-spatial__rig,#hero .hero-spatial__floor,#hero .hero-spatial__frame--mid,#hero .hero-spatial__block--source,#hero .hero-spatial__block--core,#hero .hero-spatial__block--ai,#hero .hero-spatial__block--core .hero-spatial__front i { animation: none; } }

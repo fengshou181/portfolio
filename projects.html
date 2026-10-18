@@ -28,7 +28,7 @@
       <a href="about.html">关于</a>
       <a href="experience.html">经历</a>
       <a href="projects.html" class="active">项目</a>
-      <a href="ecommerce-dashboard.html">看板</a>
+      <a href="ecommerce-dashboard.html">看板</a><a href="workspace.html">AI 工作台</a>
       <a href="skills.html">能力</a>
       <a href="contact.html">联系</a>
     </div>
@@ -129,16 +129,21 @@
           <h3 class="project-title">多源电商数据分析平台</h3>
           <p class="project-desc">
             基于 Apache Doris 构建多源电商数据整合分析平台，整合 Olist 巴西电商、Amazon 评论、Instacart 生鲜杂货、淘宝用户行为四大数据集及京东商品样本，
-            25 张表累计 2.75 亿条记录。设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析，
-            覆盖销售趋势、品类结构、地域分布、用户行为转化漏斗等多维洞察；看板数据由 Doris 实时驱动。
+            25 张表累计 2.75 亿条记录（宽表事实行数约 1.35 亿，数据截至 2026-10-18）。设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析，
+            覆盖销售趋势、品类结构、地域分布、用户行为转化漏斗等多维洞察；看板数据由 Doris 刷新并发布为静态快照。
           </p>
           <div class="project-tags">
             <span>Apache Doris</span><span>宽表建模</span><span>EDA</span>
             <span>多源数据整合</span><span>用户行为分析</span><span>Chart.js</span>
           </div>
-          <a href="ecommerce-dashboard.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:14px; font-weight:500; color: var(--accent);">
-            查看数据看板 &#8599;
-          </a>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:14px;">
+            <a href="ecommerce-dashboard.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:500; color: var(--accent);">
+              查看数据看板 &#8599;
+            </a>
+            <a href="https://github.com/fengshou181/ecom_ai" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:500; color: var(--text-dim);">
+              源码 & README &#8599;
+            </a>
+          </div>
         </div>
       </div>
       <div class="project-card large fade-up">
@@ -154,16 +159,21 @@
           <h3 class="project-title">电商数仓智能问答系统</h3>
           <p class="project-desc">
             基于本地 LLM 与向量检索的 Text-to-SQL 系统：中文提问自动检索库表结构、生成并校验 SQL、查询 Doris 数仓直出结果，全链路本地零数据外发。
-            建立 30 用例评测集驱动优化，知识库 25 表全覆盖 + 库路由检索后，执行成功率 100%、准确率 86.7%、P50 延迟 1.1s；
-            通过模型 A/B 评测完成 3b/7b 选型，并落地 sqlglot 白名单、只读账号、防注入三层安全机制。
+            建立 37 用例评测集（含留出集/安全用例/多行结果）驱动优化，知识库 25 表全覆盖 + 三级检索后，执行成功率 100%、准确率 85.3%、P50 延迟 1.3s；
+            通过模型 A/B 评测完成 3b/7b 选型，并落地 sqlglot 白名单、只读账号、AST 级 LIMIT 封顶三层安全机制。
           </p>
           <div class="project-tags">
             <span>Ollama</span><span>Chroma</span><span>Text-to-SQL</span>
             <span>评测驱动</span><span>Streamlit</span><span>sqlglot</span>
           </div>
-          <a href="rag-benchmark.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:14px; font-weight:500; color: var(--accent);">
-            查看评测报告 &#8599;
-          </a>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:14px;">
+            <a href="rag-benchmark.html" class="project-link" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:500; color: var(--accent);">
+              查看评测报告 &#8599;
+            </a>
+            <a href="https://github.com/fengshou181/ecom_ai" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:500; color: var(--text-dim);">
+              源码 & README &#8599;
+            </a>
+          </div>
         </div>
       </div>
     </div>

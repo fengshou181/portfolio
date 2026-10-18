@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>丰年 | 数据工程师</title>
+<title>丰年 | 数据智能实验室</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/hero_oguri.webp">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hero-spatial.css">
+<script src="hero-spatial.js" defer></script>
 </head>
 <body class="has-hero">
 
@@ -34,6 +35,7 @@
       <a href="experience.html">经历</a>
       <a href="projects.html">项目</a>
       <a href="ecommerce-dashboard.html">看板</a>
+      <a href="workspace.html">AI 工作台</a>
       <a href="skills.html">能力</a>
       <a href="contact.html">联系</a>
     </div>
@@ -50,60 +52,113 @@
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO: SYSTEM CONSOLE ============ -->
 <section id="hero" class="hero">
-  <div class="hero-bg-img"></div>
-  <div class="hero-tint"></div>
-  <canvas id="hero-canvas"></canvas>
+  <div class="hero-spatial" aria-hidden="true">
+    <div class="hero-spatial__floor"></div>
+    <div class="hero-spatial__rig">
+      <div class="hero-spatial__frame hero-spatial__frame--far"></div>
+      <div class="hero-spatial__frame hero-spatial__frame--mid"></div>
+      <div class="hero-spatial__frame hero-spatial__frame--near"></div>
+      <div class="hero-spatial__block hero-spatial__block--rear"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
+      <div class="hero-spatial__block hero-spatial__block--source"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
+      <div class="hero-spatial__block hero-spatial__block--core"><span class="hero-spatial__front"><i></i><i></i><i></i><i></i><i></i></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
+      <div class="hero-spatial__block hero-spatial__block--ai"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
+    </div>
+  </div>
   <div class="hero-overlay"></div>
 
-  <div class="hero-top-bar">
-    <div class="hero-vol">✱ #VOL 2026.08</div>
-    <div class="hero-brand">Portfolio.</div>
-    <div class="hero-vol-jp">ポートフォリオ</div>
-  </div>
-
   <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-tag">DATA ENGINEER / AVAILABLE</div>
-      <h1 class="hero-title">
-        <span class="line">数据驱动</span>
-        <span class="line"><span class="accent">价值创造</span></span>
-      </h1>
-      <div class="hero-cn-name">丰年</div>
-      <div class="hero-cn-sub">fēng nián</div>
-      <p class="hero-subtitle">
-        1年数据工程实战经验，从数仓架构到ETL开发到可视化看板全链路交付。
-        主导多源电商数据整合平台，覆盖4大数据集1.35亿条记录，
-        擅长宽表建模与用户行为分析，用数据为业务决策提供量化支撑。
-      </p>
-    </div>
+    <div style="width:100%;">
+      <!-- System status bar -->
+      <div class="sys-bar" style="margin-bottom:36px;">
+        <div class="sys-left">
+          <span class="sys-brand">FENGNIAN / DATA INTELLIGENCE LAB</span>
+          <span class="status-tag ok">SYSTEM ONLINE</span>
+        </div>
+        <div class="sys-right">
+          <span>数据快照 2026-10-18</span>
+          <span>Apache Doris</span>
+        </div>
+      </div>
 
-    <div class="hero-right">
-      <div class="hero-vname">FENG&nbsp;&nbsp;NIAN</div>
-      <div class="hero-vmeta">
-        <div class="vmeta-row"><span class="vmeta-label">#ROLE</span><span class="vmeta-val">DATA ENGINEER</span></div>
-        <div class="vmeta-row"><span class="vmeta-label">#EXP</span><span class="vmeta-val">1 YEAR</span></div>
-        <div class="vmeta-row"><span class="vmeta-label">#EDU</span><span class="vmeta-val">BIG DATA</span></div>
+      <h1 class="hero-title">
+        <span class="line">数据智能</span>
+        <span class="line"><span class="accent">实验室</span></span>
+      </h1>
+      <p class="hero-subtitle" style="margin-top:16px;">
+        数据工程 × AI 分析系统：1.35 亿行电商数据仓库运行在 Apache Doris 上，
+        Text-to-SQL 智能问答可直接用中文查询数仓 —— 全链路本地运行，零数据外发。
+      </p>
+
+      <!-- Console split panels -->
+      <div class="console-grid">
+        <!-- Dataset status -->
+        <div class="console-panel">
+          <div class="console-panel-head">
+            <span>数据集状态 / DATASETS</span>
+            <span class="status-tag ok">4/4 可用</span>
+          </div>
+          <div class="ds-list">
+            <div class="ds-row">
+              <span class="ds-name">olist</span>
+              <span class="ds-desc">巴西电商 99,441 订单</span>
+              <span class="status-tag ok">READY</span>
+            </div>
+            <div class="ds-row">
+              <span class="ds-name">amazon</span>
+              <span class="ds-desc">商品评论 40.9 万条</span>
+              <span class="status-tag ok">READY</span>
+            </div>
+            <div class="ds-row">
+              <span class="ds-name">instacart</span>
+              <span class="ds-desc">生鲜杂货 3,346 万商品项</span>
+              <span class="status-tag ok">READY</span>
+            </div>
+            <div class="ds-row">
+              <span class="ds-name">taobao</span>
+              <span class="ds-desc">用户行为 1 亿条</span>
+              <span class="status-tag warn">SNAPSHOT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Copilot entry -->
+        <div class="console-panel">
+          <div class="console-panel-head">
+            <span>AI 数据分析 Copilot</span>
+            <span class="status-tag info">qwen2.5:3b · 本地推理</span>
+          </div>
+          <div class="ai-entry-body">
+            <div class="term-box" onclick="window.AICopilot && window.AICopilot.open('查询 Olist 已交付订单的 GMV')">
+              <span class="prompt">&gt;</span>
+              <span class="placeholder">用中文提问，直接查询数仓，例如：查询 Olist 已交付订单的 GMV…</span>
+              <span class="status-tag ok">READY</span>
+            </div>
+            <div class="ai-chips">
+              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('查看 Olist 已交付订单的 GMV')">查看已交付 GMV</button>
+              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('比较四个数据集的订单量')">比较各数据集订单量</button>
+              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('分析淘宝用户行为转化率变化')">分析转化率变化</button>
+              <a class="ai-chip" href="workspace.html" style="text-decoration:none;">进入 AI 工作台 →</a>
+            </div>
+            <p style="font-size:11px; color:var(--text-mute); font-family:var(--font-mono);">
+              回答包含：数据来源 · 指标口径 · 可展开 SQL · 耗时 · 快照日期
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="hero-barcode">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-      <div class="hero-barcode-text">2 00001 20268</div>
     </div>
   </div>
 
   <div class="hero-bottom-bar">
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">1.35亿</div><div class="label">数据量级</div></div>
-      <div class="hero-stat"><div class="num">4套</div><div class="label">宽表建模</div></div>
-      <div class="hero-stat"><div class="num">99.8%</div><div class="label">数据一致</div></div>
-      <div class="hero-stat"><div class="num">60%</div><div class="label">效率提升</div></div>
+      <div class="hero-stat"><div class="num">1.35亿</div><div class="label">宽表事实行数</div><div class="sub">截至 2026-10-18</div></div>
+      <div class="hero-stat"><div class="num">25</div><div class="label">物理表</div><div class="sub">5 个业务库</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="label">宽表建模</div><div class="sub">Olist/Amazon/Instacart/淘宝</div></div>
+      <div class="hero-stat"><div class="num">85.3%</div><div class="label">RAG 准确率</div><div class="sub">37 用例评测集</div></div>
     </div>
     <div class="hero-tech-strip">
-      <span>SQL</span><span>ETL</span><span>Apache Doris</span><span>StarRocks</span><span>宽表建模</span><span>Power BI</span><span>Chart.js</span>
+      <span>SQL</span><span>ETL</span><span>Apache Doris</span><span>Text-to-SQL</span><span>LangChain</span><span>Chroma</span><span>Ollama</span><span>Chart.js</span>
     </div>
   </div>
 
@@ -120,14 +175,14 @@
     <div class="section-header fade-up">
       <span class="section-tag">FEATURED WORK</span>
       <h2 class="section-title">精选项目</h2>
-      <p class="section-desc">从全链路数仓到电商数据分析，用工程能力驱动业务价值。</p>
+      <p class="section-desc">从数仓架构、ETL 开发到 AI 智能问答，完整交付的数据系统工程。</p>
     </div>
     <div class="projects-grid">
       <div class="project-card large fade-up">
         <a href="ecommerce-dashboard.html">
           <div class="project-arrow">&#8599;</div>
           <div class="project-img">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=E-commerce%20data%20analytics%20dashboard%2C%20purple%20gradient%20theme%2C%20sales%20charts%20and%20user%20behavior%20funnel%2C%20multiple%20datasets%20visualization%2C%20dark%20purple%20background%2C%20futuristic%20data%20UI&image_size=landscape_16_9" alt="多源电商数据分析平台" loading="lazy">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20console%20dashboard%2C%20cyan%20glowing%20charts%20on%20deep%20graphite%20background%2C%20e-commerce%20analytics%2C%20terminal%20aesthetic%2C%20grid%20lines%2C%20futuristic%20data%20UI&image_size=landscape_16_9" alt="多源电商数据分析平台" loading="lazy">
           </div>
           <div class="project-body">
             <div class="project-meta">
@@ -147,10 +202,32 @@
         </a>
       </div>
       <div class="project-card fade-up">
+        <a href="rag-benchmark.html">
+          <div class="project-arrow">&#8599;</div>
+          <div class="project-img">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20AI%20terminal%20interface%2C%20cyan%20code%20and%20SQL%20queries%20glowing%20on%20black%20screen%2C%20neural%20network%20nodes%2C%20retro%20terminal%20aesthetic%2C%20deep%20graphite%20background&image_size=landscape_16_9" alt="RAG 智能问答系统" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">RAG · TEXT-TO-SQL</span>
+              <span class="project-year">2026.10</span>
+            </div>
+            <h3 class="project-title">电商数仓 RAG 智能问答</h3>
+            <p class="project-desc">
+              本地 LLM（Ollama + qwen2.5:3b）+ 向量检索（Chroma）的 Text-to-SQL 系统，中文提问直查 Doris 数仓，
+              评测准确率 85.3%，执行成功率 100%。
+            </p>
+            <div class="project-tags">
+              <span>Ollama</span><span>Chroma</span><span>sqlglot</span><span>37 用例评测</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="project-card fade-up">
         <a href="projects.html">
           <div class="project-arrow">&#8599;</div>
           <div class="project-img">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20warehouse%20architecture%20visualization%2C%20glowing%20blue%20data%20nodes%2C%20ETL%20pipeline%20flow%2C%20cinematic%20dark%20background%2C%20futuristic%20data%20engineering&image_size=landscape_16_9" alt="榜样全链路数据仓库" loading="lazy">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Dark%20tech%20data%20warehouse%20architecture%20visualization%2C%20glowing%20cyan%20data%20nodes%2C%20ETL%20pipeline%20flow%2C%20cinematic%20dark%20background%2C%20futuristic%20data%20engineering&image_size=landscape_16_9" alt="榜样全链路数据仓库" loading="lazy">
           </div>
           <div class="project-body">
             <div class="project-meta">
@@ -163,27 +240,6 @@
             </p>
             <div class="project-tags">
               <span>SQL ETL</span><span>三层数仓</span><span>LTV分析</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="project-card fade-up">
-        <a href="projects.html">
-          <div class="project-arrow">&#8599;</div>
-          <div class="project-img">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Abstract%20data%20analysis%20visualization%2C%20RFM%20model%20clustering%2C%20user%20value%20segments%2C%20glowing%20blue%20particles%2C%20dark%20background%2C%20tech%20art&image_size=landscape_16_9" alt="罗森用户价值度分析" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-category">DATA ANALYSIS</span>
-              <span class="project-year">2025.09 - 2025.12</span>
-            </div>
-            <h3 class="project-title">罗森用户价值度分析</h3>
-            <p class="project-desc">
-              RFM模型用户分群与多维度偏好分析，库存周转效率提升22%，积压库存占比降低18%。
-            </p>
-            <div class="project-tags">
-              <span>RFM</span><span>ARPU</span><span>复购分析</span>
             </div>
           </div>
         </a>
@@ -213,7 +269,7 @@
     </div>
     <div class="footer-copy">&copy; 2026 FENG NIAN · DATA ENGINEER</div>
     <div class="footer-tech">
-      <span>HTML</span> · <span>CSS</span> · <span>JS</span> · <span>Chart.js</span> · <span style="color: var(--accent);">OGURI × TAMAMO</span>
+      <span>Apache Doris</span> · <span>Ollama</span> · <span>Chart.js</span> · <span style="color: var(--accent);">DATA INTELLIGENCE LAB</span>
     </div>
   </div>
 </div>
@@ -223,15 +279,26 @@
 const menuToggle = document.getElementById('menuToggle');
 const navLinksEl = document.getElementById('navLinks');
 if (menuToggle && navLinksEl) {
+  menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.addEventListener('click', function() {
-    menuToggle.classList.toggle('open');
+    var isOpen = menuToggle.classList.toggle('open');
     navLinksEl.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   navLinksEl.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
       menuToggle.classList.remove('open');
       navLinksEl.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+  document.addEventListener('click', function(e) {
+    if (!navLinksEl.classList.contains('open')) return;
+    if (!e.target.closest('.navbar')) {
+      menuToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
@@ -243,7 +310,7 @@ window.addEventListener('load', function() {
   }, 500);
 });
 
-// ============ HERO CANVAS PARTICLE NETWORK ============
+// ============ HERO CANVAS PARTICLE NETWORK (cyan) ============
 (function() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
@@ -304,7 +371,7 @@ window.addEventListener('load', function() {
       }
     }
     draw() {
-      ctx.fillStyle = 'rgba(204, 130, 174, 0.5)';
+      ctx.fillStyle = 'rgba(41, 211, 255, 0.45)';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
@@ -328,7 +395,7 @@ window.addEventListener('load', function() {
         if (distSq < 16900) {
           var dist = Math.sqrt(distSq);
           var op = (1 - dist / 130) * 0.15;
-          ctx.strokeStyle = 'rgba(204, 130, 174, ' + op + ')';
+          ctx.strokeStyle = 'rgba(41, 211, 255, ' + op + ')';
           ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
@@ -390,12 +457,12 @@ window.addEventListener('scroll', function() {
   });
 });
 
-// ============ THEME TOGGLE ============
+// ============ THEME TOGGLE (tech palette) ============
 const themes = [
-  { name: 'pink', accent: '#cc82ae' },
-  { name: 'lavender', accent: '#9b8ec7' },
-  { name: 'mint', accent: '#7ec8a0' },
-  { name: 'gold', accent: '#e8c870' },
+  { name: 'cyan', accent: '#29d3ff' },
+  { name: 'lime', accent: '#b8f36b' },
+  { name: 'amber', accent: '#f5b84b' },
+  { name: 'ice', accent: '#9ad7ff' },
 ];
 let themeIdx = 0;
 const themeBtn = document.getElementById('themeToggle');
@@ -406,9 +473,10 @@ themeBtn.addEventListener('click', function() {
   const t = themes[themeIdx];
   const accentRgb = hexToRgb(t.accent);
   root.style.setProperty('--accent', t.accent);
-  root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.15)');
-  root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.08)');
-  root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.3)');
+  root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.12)');
+  root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.07)');
+  root.style.setProperty('--grid-line', 'rgba(' + accentRgb + ', 0.035)');
+  root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.4)');
 });
 
 function hexToRgb(hex) {
@@ -419,5 +487,6 @@ function hexToRgb(hex) {
 }
 </script>
 
+<script src="ai-copilot.js?v=20261018a"></script>
 </body>
 </html>

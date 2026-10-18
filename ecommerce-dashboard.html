@@ -23,7 +23,7 @@
     position: absolute;
     top: -50%; right: -20%;
     width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(124,92,168,0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(41,211,255,0.12) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -32,7 +32,7 @@
     position: absolute;
     bottom: -30%; left: -10%;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(224,168,200,0.10) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(41,211,255, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -57,7 +57,7 @@
     margin-bottom: 16px;
   }
   .dashboard-title .accent {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pink) 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -67,6 +67,16 @@
     color: var(--text-dim);
     max-width: 640px;
     line-height: 1.7;
+  }
+  .dashboard-data-note {
+    font-size: 13px;
+    color: var(--text-mute);
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: var(--accent-glow);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: inline-block;
   }
 
   /* KPI 卡片 */
@@ -87,7 +97,7 @@
   }
   .kpi-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(124,92,168,0.15);
+    box-shadow: 0 12px 40px rgba(41,211,255,0.15);
     border-color: var(--border-hover);
   }
   .kpi-card::before {
@@ -95,7 +105,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-pink));
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
     opacity: 0;
     transition: opacity 0.3s;
   }
@@ -156,7 +166,7 @@
   .dataset-tab.active {
     background: var(--accent);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(124,92,168,0.3);
+    box-shadow: 0 4px 12px rgba(41,211,255,0.3);
   }
 
   /* Chart Grid */
@@ -192,7 +202,7 @@
   }
   .chart-card:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 8px 24px rgba(124,92,168,0.08);
+    box-shadow: 0 8px 24px rgba(41,211,255,0.08);
   }
   .chart-title {
     font-size: 15px;
@@ -206,7 +216,7 @@
   .chart-title::before {
     content: '';
     width: 4px; height: 16px;
-    background: linear-gradient(180deg, var(--accent), var(--accent-pink));
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
     border-radius: 2px;
   }
   .chart-container {
@@ -217,7 +227,7 @@
 
   /* Insight box */
   .insight-box {
-    background: linear-gradient(135deg, rgba(124,92,168,0.08) 0%, rgba(224,168,200,0.06) 100%);
+    background: linear-gradient(135deg, rgba(41,211,255,0.08) 0%, rgba(224,168,200,0.06) 100%);
     border-left: 4px solid var(--accent);
     border-radius: 0 12px 12px 0;
     padding: 20px 24px;
@@ -271,7 +281,7 @@
     padding: 0 14px;
     transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .funnel-bar.pv { background: linear-gradient(90deg, #7c5ca8, #9b7fc4); }
+  .funnel-bar.pv { background: linear-gradient(90deg, #29d3ff, #7fe0ff); }
   .funnel-bar.cart { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
   .funnel-bar.fav { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
   .funnel-bar.buy { background: linear-gradient(90deg, #10b981, #34d399); }
@@ -290,6 +300,15 @@
     margin-left: 12px;
     font-family: var(--font-mono);
   }
+
+  /* Chart ask-AI button */
+  .ai-ask {
+    margin-left: auto; padding: 3px 10px;
+    background: transparent; border: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px;
+    color: var(--text-dim); cursor: pointer; transition: all 0.25s; white-space: nowrap;
+  }
+  .ai-ask:hover { border-color: var(--accent); color: var(--accent); }
 
   @media (max-width: 768px) {
     .chart-grid { grid-template-columns: 1fr; }
@@ -322,7 +341,7 @@
       <a href="about.html">关于</a>
       <a href="experience.html">经历</a>
       <a href="projects.html">项目</a>
-      <a href="ecommerce-dashboard.html" class="active">看板</a>
+      <a href="ecommerce-dashboard.html" class="active">看板</a><a href="workspace.html">AI 工作台</a>
       <a href="skills.html">能力</a>
       <a href="contact.html">联系</a>
     </div>
@@ -342,13 +361,26 @@
 <!-- Dashboard Hero -->
 <section class="dashboard-hero">
   <div class="container">
+    <div class="sys-bar" style="margin-bottom:24px;">
+      <div class="sys-left">
+        <span class="sys-brand">E-COMMERCE DATA CONSOLE</span>
+        <span class="status-tag ok">SOURCE: APACHE DORIS</span>
+      </div>
+      <div class="sys-right">
+        <span class="status-tag warn">SNAPSHOT 2026-10-18</span>
+        <span>REFRESH scripts/16_refresh_dashboard_data.py</span>
+      </div>
+    </div>
     <div class="dashboard-tag">E-COMMERCE ANALYTICS</div>
     <h1 class="dashboard-title">
       电商数据<span class="accent">分析看板</span>
     </h1>
     <p class="dashboard-subtitle">
       基于 Apache Doris 构建的多源电商数据整合分析平台，覆盖巴西电商、Amazon评论、Instacart生鲜杂货、淘宝用户行为四大数据集，
-      共计约 1.35 亿条记录，从销售趋势到用户行为的全景洞察。
+      共计约 1.35 亿条宽表事实记录，从销售趋势到用户行为的全景洞察。
+    </p>
+    <p class="dashboard-data-note">
+      📌 本看板数据为 Doris 查询后发布的静态快照，非浏览器实时查询；数据口径与刷新日期见各图表标注。
     </p>
 
     <!-- KPI Cards -->
@@ -751,12 +783,12 @@
   });
 
   // ========== Chart.js Config ==========
-  Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif";
-  Chart.defaults.color = '#6b6580';
-  const accentColor = '#7c5ca8';
-  const accentPink = '#e0a8c8';
-  const accentSoft = '#b89ed0';
-  const gridColor = 'rgba(124,92,168,0.06)';
+  Chart.defaults.font.family = "'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif";
+  Chart.defaults.color = '#8493a1';
+  const accentColor = '#29d3ff';
+  const accentPink = '#b8f36b';
+  const accentSoft = '#7fe0ff';
+  const gridColor = 'rgba(41,211,255,0.06)';
 
   // ========== Olist Charts ==========
   new Chart(document.getElementById('olistMonthly'), {
@@ -767,7 +799,7 @@
         label: 'GMV (万R$)',
         data: [0.35,5.68,13.72,28.63,43.20,41.24,58.62,50.30,58.50,66.82,72.04,76.93,117.91,86.35,110.73,98.69,115.51,115.97,114.98,102.27,105.87,100.33],
         borderColor: accentColor,
-        backgroundColor: 'rgba(124,92,168,0.1)',
+        backgroundColor: 'rgba(41,211,255,0.1)',
         tension: 0.35,
         fill: true,
         pointRadius: 3,
@@ -791,7 +823,7 @@
       labels: ['已送达', '运输中', '已取消', '已开票', '处理中'],
       datasets: [{
         data: [97.78, 1.12, 0.47, 0.32, 0.31],
-        backgroundColor: ['#7c5ca8', '#0ea5e9', '#ef4444', '#f59e0b', '#10b981'],
+        backgroundColor: ['#29d3ff', '#0ea5e9', '#ef4444', '#f59e0b', '#10b981'],
         borderWidth: 0,
       }]
     },
@@ -812,7 +844,7 @@
       datasets: [{
         label: 'GMV (万R$)',
         data: [144.12, 130.55, 124.17, 115.67, 105.93, 90.25, 77.84, 71.93, 68.54, 58.42],
-        backgroundColor: 'rgba(124,92,168,0.8)',
+        backgroundColor: 'rgba(41,211,255,0.8)',
         borderRadius: 6,
       }]
     },
@@ -836,10 +868,10 @@
         label: 'GMV (万R$)',
         data: [592.17, 212.97, 185.62, 88.58, 80.09, 61.15, 61.02, 35.32, 34.77, 32.48],
         backgroundColor: [
-          'rgba(124,92,168,0.9)','rgba(124,92,168,0.75)','rgba(124,92,168,0.65)',
-          'rgba(124,92,168,0.5)','rgba(124,92,168,0.45)','rgba(124,92,168,0.4)',
-          'rgba(124,92,168,0.35)','rgba(124,92,168,0.3)','rgba(124,92,168,0.25)',
-          'rgba(124,92,168,0.2)'
+          'rgba(41,211,255,0.9)','rgba(41,211,255,0.75)','rgba(41,211,255,0.65)',
+          'rgba(41,211,255,0.5)','rgba(41,211,255,0.45)','rgba(41,211,255,0.4)',
+          'rgba(41,211,255,0.35)','rgba(41,211,255,0.3)','rgba(41,211,255,0.25)',
+          'rgba(41,211,255,0.2)'
         ],
         borderRadius: 6,
       }]
@@ -862,7 +894,7 @@
       labels: ['信用卡', 'boleto', '代金券', '借记卡'],
       datasets: [{
         data: [75.25, 20.3, 2.95, 1.5],
-        backgroundColor: ['#7c5ca8', '#f97316', '#10b981', '#f59e0b'],
+        backgroundColor: ['#29d3ff', '#f97316', '#10b981', '#f59e0b'],
         borderWidth: 0,
       }]
     },
@@ -1337,6 +1369,34 @@
       if (fb('fb-fav')) fb('fb-fav').style.width = pct(f.fav);
       if (fb('fb-buy')) fb('fb-buy').style.width = pct(f.buy);
     }
+  })();
+
+  // ========== Per-chart "Ask AI" buttons ==========
+  (function () {
+    const activeDataset = () => {
+      const t = document.querySelector('.dataset-tab.active');
+      return t ? t.dataset.tab : 'olist';
+    };
+    document.querySelectorAll('.chart-card').forEach(function(card) {
+      const titleEl = card.querySelector('.chart-title');
+      if (!titleEl) return;
+      const btn = document.createElement('button');
+      btn.className = 'ai-ask';
+      btn.type = 'button';
+      btn.textContent = '◈ 询问 AI';
+      btn.addEventListener('click', function() {
+        const q = '解释当前' + activeDataset() + '数据集中「' + titleEl.textContent.trim() + '」图表：这个分布/趋势说明什么？';
+        if (window.AICopilot) {
+          window.AICopilot.open(q, {
+            page: 'ecommerce-dashboard',
+            dataset: activeDataset(),
+            metric: titleEl.textContent.trim(),
+            snapshot: '2026-10-18'
+          });
+        }
+      });
+      titleEl.appendChild(btn);
+    });
   })();
 </script>
 </body>

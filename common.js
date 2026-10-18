@@ -30,27 +30,39 @@ window.addEventListener('scroll', function() {
 var menuBtn = document.getElementById('menuToggle');
 var navLinks = document.getElementById('navLinks');
 if (menuBtn && navLinks) {
+  menuBtn.setAttribute('aria-expanded', 'false');
   menuBtn.addEventListener('click', function() {
-    menuBtn.classList.toggle('open');
+    var isOpen = menuBtn.classList.toggle('open');
     navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   navLinks.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
       menuBtn.classList.remove('open');
       navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
+  });
+  // 点击导航区域外部关闭菜单
+  document.addEventListener('click', function(e) {
+    if (!navLinks.classList.contains('open')) return;
+    if (!e.target.closest('.navbar')) {
+      menuBtn.classList.remove('open');
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
-// Theme toggle
+// Theme toggle (tech palette)
 var themeBtn = document.getElementById('themeToggle');
 var root = document.documentElement;
 var themeIdx = 0;
 var themes = [
-  { name: 'gold',   accent: '#e8a838' },
-  { name: 'rose',   accent: '#ec4899' },
-  { name: 'azure',  accent: '#3b82f6' },
-  { name: 'silver', accent: '#94a3b8' },
+  { name: 'cyan',  accent: '#29d3ff' },
+  { name: 'lime',  accent: '#b8f36b' },
+  { name: 'amber', accent: '#f5b84b' },
+  { name: 'ice',   accent: '#9ad7ff' },
 ];
 
 function hexToRgb(hex) {
@@ -67,11 +79,20 @@ if (themeBtn) {
     var t = themes[themeIdx];
     var accentRgb = hexToRgb(t.accent);
     root.style.setProperty('--accent', t.accent);
-    root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.15)');
-    root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.08)');
-    root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.3)');
+    root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.12)');
+    root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.07)');
+    root.style.setProperty('--grid-line', 'rgba(' + accentRgb + ', 0.035)');
+    root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.4)');
   });
 }
+
+// AI Copilot widget: inject on every page that loads common.js
+(function() {
+  var s = document.createElement('script');
+  s.src = 'ai-copilot.js?v=20261018a';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
 
 // Fade-up animation on scroll (Intersection Observer)
 var fadeElements = document.querySelectorAll('.fade-up');
