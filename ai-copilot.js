@@ -14,7 +14,7 @@
     var link = document.createElement('link');
     link.id = 'ai-copilot-css';
     link.rel = 'stylesheet';
-    link.href = 'ai-copilot.css';
+    link.href = 'ai-copilot.css?v=20261024';
     document.head.appendChild(link);
   }
 

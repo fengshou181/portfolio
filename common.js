@@ -54,37 +54,7 @@ if (menuBtn && navLinks) {
   });
 }
 
-// Theme toggle (tech palette)
-var themeBtn = document.getElementById('themeToggle');
-var root = document.documentElement;
-var themeIdx = 0;
-var themes = [
-  { name: 'cyan',  accent: '#29d3ff' },
-  { name: 'lime',  accent: '#b8f36b' },
-  { name: 'amber', accent: '#f5b84b' },
-  { name: 'ice',   accent: '#9ad7ff' },
-];
-
-function hexToRgb(hex) {
-  hex = hex.replace('#', '');
-  var r = parseInt(hex.substr(0, 2), 16);
-  var g = parseInt(hex.substr(2, 2), 16);
-  var b = parseInt(hex.substr(4, 2), 16);
-  return r + ', ' + g + ', ' + b;
-}
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', function() {
-    themeIdx = (themeIdx + 1) % themes.length;
-    var t = themes[themeIdx];
-    var accentRgb = hexToRgb(t.accent);
-    root.style.setProperty('--accent', t.accent);
-    root.style.setProperty('--accent-dim', 'rgba(' + accentRgb + ', 0.12)');
-    root.style.setProperty('--accent-glow', 'rgba(' + accentRgb + ', 0.07)');
-    root.style.setProperty('--grid-line', 'rgba(' + accentRgb + ', 0.035)');
-    root.style.setProperty('--border-hover', 'rgba(' + accentRgb + ', 0.4)');
-  });
-}
+// 配色已锁定为设计规范 new-chat-6be（不提供主题切换）
 
 // AI Copilot widget: inject on every page that loads common.js
 (function() {
