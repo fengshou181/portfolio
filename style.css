@@ -427,7 +427,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 }
 .about-hero-bg::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/about-bg.webp'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
   opacity: 0.25; filter: saturate(0.9);
 }
 .about-hero-content {
@@ -464,7 +464,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .about-hero-right { flex-shrink: 0; width: 360px; height: 440px; }
 .about-hero-image {
   width: 100%; height: 100%; border-radius: 4px; overflow: hidden;
-  background-image: url('images/about-bg.webp'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
   border: 1px solid var(--border);
   transition: transform 0.4s;
@@ -606,7 +606,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .projects { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
 .projects-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('images/oguri_cap_2_opt.webp'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
   opacity: 0.08; filter: blur(3px) saturate(0.5); z-index: 0; pointer-events: none;
 }
 .projects .container { position: relative; z-index: 1; }
@@ -646,8 +646,8 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .skills { background: var(--bg); position: relative; }
 .skills-bg-img {
   position: absolute; bottom: 0; left: 0; width: 60%; height: 100%;
-  background-image: url('images/m28.webp'); background-size: cover; background-position: left center;
-  opacity: 0.06; filter: blur(5px) saturate(0.5); z-index: 0; pointer-events: none;
+  background-image: url('images/anime-operator.jpg'); background-size: cover; background-position: left center;
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85); z-index: 0; pointer-events: none;
   mask-image: linear-gradient(to right, black 0%, transparent 80%);
   -webkit-mask-image: linear-gradient(to right, black 0%, transparent 80%);
 }
@@ -676,8 +676,10 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .articles { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
 .articles-bg-deco {
   position: absolute; top: 10%; left: -80px; width: 400px; height: 500px;
-  background-image: url('images/oguri_tamamo_1.jpg'); background-size: cover; background-position: center;
-  opacity: 0.06; filter: blur(5px) saturate(0.5); z-index: 0; pointer-events: none; border-radius: 4px;
+  background-image: url('images/anime-camera.jpg'); background-size: cover; background-position: center;
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85); z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(to right, black 35%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to right, black 35%, transparent 95%);
 }
 .articles .container { position: relative; z-index: 1; }
 .articles-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
@@ -789,8 +791,8 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .contact { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--bg); }
 .contact-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('images/tw_44.webp'); background-size: cover; background-position: center;
-  opacity: 0.12; filter: blur(3px) saturate(0.7); z-index: 0;
+  background-image: url('images/anime-astronaut.jpg'); background-size: cover; background-position: center;
+  opacity: 0.2; filter: saturate(0.7) brightness(0.85); z-index: 0;
 }
 .contact-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .contact-bg::before {
@@ -838,44 +840,56 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .page-bg-full {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-size: cover; background-position: center;
-  opacity: 0.08; filter: blur(4px) saturate(0.6);
+  opacity: 0.14; filter: saturate(0.7) brightness(0.85);
   z-index: 0; pointer-events: none;
 }
 .page-bg-right {
   position: absolute; top: 15%; right: -120px; width: 500px; height: 600px;
   background-size: cover; background-position: center;
-  opacity: 0.06; filter: blur(5px) saturate(0.5);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(to left, black 35%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to left, black 35%, transparent 95%);
 }
 .page-bg-left {
   position: absolute; bottom: 10%; left: -120px; width: 500px; height: 600px;
   background-size: cover; background-position: center;
-  opacity: 0.06; filter: blur(5px) saturate(0.5);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(to right, black 35%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to right, black 35%, transparent 95%);
 }
 .page-bg-top-right {
   position: absolute; top: 5%; right: -80px; width: 380px; height: 480px;
   background-size: cover; background-position: center;
-  opacity: 0.07; filter: blur(4px) saturate(0.6);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(225deg, black 30%, transparent 90%);
+  -webkit-mask-image: linear-gradient(225deg, black 30%, transparent 90%);
 }
 .page-bg-bottom-left {
   position: absolute; bottom: 5%; left: -80px; width: 380px; height: 480px;
   background-size: cover; background-position: center;
-  opacity: 0.07; filter: blur(4px) saturate(0.6);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(45deg, black 30%, transparent 90%);
+  -webkit-mask-image: linear-gradient(45deg, black 30%, transparent 90%);
 }
 .page-bg-bottom-right {
   position: absolute; bottom: 5%; right: -80px; width: 380px; height: 480px;
   background-size: cover; background-position: center;
-  opacity: 0.07; filter: blur(4px) saturate(0.6);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(315deg, black 30%, transparent 90%);
+  -webkit-mask-image: linear-gradient(315deg, black 30%, transparent 90%);
 }
 .page-bg-top-left {
   position: absolute; top: 5%; left: -80px; width: 380px; height: 480px;
   background-size: cover; background-position: center;
-  opacity: 0.07; filter: blur(4px) saturate(0.6);
+  opacity: 0.3; filter: saturate(0.75) brightness(0.85);
   z-index: 0; pointer-events: none; border-radius: 4px;
+  mask-image: linear-gradient(135deg, black 30%, transparent 90%);
+  -webkit-mask-image: linear-gradient(135deg, black 30%, transparent 90%);
 }
 .page-wrap > .container { position: relative; z-index: 1; }
 
