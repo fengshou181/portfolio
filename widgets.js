@@ -382,14 +382,15 @@
 
   function mount() {
     if (document.querySelector('.side-rail')) return;
-    const left = el('aside', 'side-rail side-rail--left');
+
+    var left = el('aside', 'side-rail side-rail--left');
     left.setAttribute('aria-label', '日常小组件');
     left.appendChild(buildQuote());
     left.appendChild(buildMusic());
     left.appendChild(buildCalendar());
     left.appendChild(buildHeatmap());
 
-    const right = el('aside', 'side-rail side-rail--right');
+    var right = el('aside', 'side-rail side-rail--right');
     right.setAttribute('aria-label', '日常小组件');
     right.appendChild(buildLuck());
     right.appendChild(buildTodo());
@@ -398,6 +399,32 @@
 
     document.body.appendChild(left);
     document.body.appendChild(right);
+
+    // 实测主容器位置，把侧栏钉在容器外侧；空隙不足就隐藏，绝不遮挡
+    function layoutRails() {
+      var c = document.querySelector('.container');
+      if (!c) return;
+      var rect = c.getBoundingClientRect();
+      var gutter = rect.left; // 容器左侧空隙宽度
+      var w = Math.min(240, gutter - 48);
+      if (window.innerWidth < 1400 || w < 180) {
+        left.style.display = 'none';
+        right.style.display = 'none';
+        return;
+      }
+      [left, right].forEach(function (r) {
+        r.style.display = 'flex';
+        r.style.width = w + 'px';
+      });
+      left.style.left = (rect.left - w - 24) + 'px';
+      left.style.right = 'auto';
+      right.style.left = 'auto';
+      right.style.right = (window.innerWidth - rect.right - w - 24) + 'px';
+    }
+    layoutRails();
+    window.addEventListener('resize', layoutRails);
+    window.addEventListener('load', layoutRails);
+    setTimeout(layoutRails, 600);
 
     mountProgress();
     mountParticles();

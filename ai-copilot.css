@@ -172,16 +172,16 @@
 .aic-btn:hover { border-color: rgba(94, 106, 210, 0.5); color: var(--text); box-shadow: 0 0 24px rgba(94, 106, 210, 0.16); }
 /* 主操作同样只以光存在 */
 .aic-btn.primary {
-  background: transparent;
-  border-color: rgba(255, 65, 38, 0.5);
-  color: #ffb4a6;
+  background: rgba(94, 106, 210, 0.1);
+  border-color: rgba(94, 106, 210, 0.5);
+  color: var(--accent-2);
 }
-.aic-btn.primary:hover { box-shadow: 0 0 28px rgba(255, 65, 38, 0.22); color: #fff; }
+.aic-btn.primary:hover { box-shadow: 0 0 24px rgba(94, 106, 210, 0.2); color: var(--text); }
 
 /* 错误 / 提示条 */
 .aic-banner {
-  padding: 12px 14px; border: 1px solid rgba(255, 65, 38, 0.4);
-  background: rgba(255, 65, 38, 0.06); color: #ff8f7d;
+  padding: 12px 14px; border: 1px solid rgba(235, 87, 87, 0.4);
+  background: rgba(235, 87, 87, 0.08); color: #ff8f7d;
   font-size: 12.5px; line-height: 1.75;
 }
 .aic-banner.warn { border-color: rgba(247, 191, 139, 0.4); background: rgba(247, 191, 139, 0.06); color: var(--lime); }

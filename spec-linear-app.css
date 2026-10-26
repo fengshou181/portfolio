@@ -614,3 +614,38 @@ body.has-hero .navbar:not(.scrolled) {
   border-color: var(--border-hover);
   box-shadow: none;
 }
+
+/* ---- 全站硬编码青色/旧色值收编（style.css 残留） ---- */
+/* 状态标签 */
+.status-tag.info { color: var(--accent); border-color: rgba(94, 106, 210, 0.35); }
+.status-tag.ok { color: var(--lime); border-color: rgba(247, 191, 139, 0.35); }
+
+/* hero 右侧卡片 */
+.hero-right {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* about 页 CTA */
+.about-hero-cta { box-shadow: none; }
+.about-hero-cta:hover { box-shadow: none; }
+
+/* 选中高亮 */
+::selection { background: rgba(94, 106, 210, 0.3); }
+
+/* 网格线/背景装饰 */
+body::before { background-image: none; }
+
+/* 旧装饰元素 */
+.hero-spatial__block--core .hero-spatial__front,
+.hero-spatial__block--source .hero-spatial__front { border-color: var(--line-lit); }
+.hero-spatial__block--ai .hero-spatial__front { border-color: rgba(94, 106, 210, 0.42); }
+
+/* 红色残留转为紫色 */
+.aic-btn.primary { border-color: rgba(94, 106, 210, 0.5); background: rgba(94, 106, 210, 0.1); color: var(--accent-2); }
+.aic-btn.primary:hover { box-shadow: 0 0 24px rgba(94, 106, 210, 0.2); color: var(--text); }
+.aic-banner.err { border-color: rgba(235, 87, 87, 0.4); background: rgba(235, 87, 87, 0.08); color: #ff8f7d; }
+.aic-banner.warn { border-color: rgba(247, 191, 139, 0.4); background: rgba(247, 191, 139, 0.08); color: var(--lime); }

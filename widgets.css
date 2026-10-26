@@ -1,32 +1,21 @@
 /* ============================================================
-   Side Widgets — 宽屏两侧日常小组件（linear 体系：细线 + 9px + 无表演）
-   仅 >=1500px 显示，窄屏隐藏
+   Side Widgets — 宽屏两侧日常小组件（linear 体系：细线 + 9px）
+   JS 实测容器位置后摆放，空隙不足自动隐藏，绝不遮挡正文
    ============================================================ */
 
 .side-rail {
   position: fixed;
   top: 76px;
   bottom: 24px;
-  /* 宽度自动吃满主容器两侧的空隙（1100px 容器 + 两侧各 24px 间距） */
-  width: calc((100vw - var(--max-w, 1100px)) / 2 - 48px);
-  min-width: 180px;
-  max-width: 240px;
+  width: 240px;
   z-index: 50;
   display: none;
   flex-direction: column;
   gap: 12px;
   overflow-y: auto;
-  scrollbar-width: none; /* 超高时允许滚动但隐藏滚动条 */
+  scrollbar-width: none;
 }
 .side-rail::-webkit-scrollbar { display: none; }
-.side-rail--left { left: 24px; }
-.side-rail--right { right: 24px; }
-
-@media (min-width: 1400px) {
-  .side-rail { display: flex; }
-  /* 侧栏显示时，主容器自动让位：内容收窄，绝不被卡片盖住 */
-  :root { --max-w: min(1100px, calc(100vw - 576px)); }
-}
 
 .widget {
   background: var(--bg-card, #0f1011);
