@@ -189,7 +189,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 .hero-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('images/hero-bg-new.webp'); background-size: cover; background-position: center center;
+  background-image: url('images/hero-bg-new.webp?v=20261027f'); background-size: cover; background-position: center center;
   opacity: 0.16; filter: saturate(0.4) contrast(1.05) brightness(0.55); z-index: 0;
 }
 #hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
@@ -427,7 +427,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 }
 .about-hero-bg::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg?v=20261027f'); background-size: cover; background-position: center;
   opacity: 0.25; filter: saturate(0.9);
 }
 .about-hero-content {
@@ -464,7 +464,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .about-hero-right { flex-shrink: 0; width: 360px; height: 440px; }
 .about-hero-image {
   width: 100%; height: 100%; border-radius: 4px; overflow: hidden;
-  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg?v=20261027f'); background-size: cover; background-position: center;
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
   border: 1px solid var(--border);
   transition: transform 0.4s;
@@ -606,7 +606,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .projects { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
 .projects-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('images/anime-space.jpg'); background-size: cover; background-position: center;
+  background-image: url('images/anime-space.jpg?v=20261027f'); background-size: cover; background-position: center;
   opacity: 0.08; filter: blur(3px) saturate(0.5); z-index: 0; pointer-events: none;
 }
 .projects .container { position: relative; z-index: 1; }
@@ -646,7 +646,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .skills { background: var(--bg); position: relative; }
 .skills-bg-img {
   position: absolute; bottom: 0; left: 0; width: 60%; height: 100%;
-  background-image: url('images/anime-operator.jpg'); background-size: cover; background-position: left center;
+  background-image: url('images/anime-operator.jpg?v=20261027f'); background-size: cover; background-position: left center;
   opacity: 0.3; filter: saturate(0.75) brightness(0.85); z-index: 0; pointer-events: none;
   mask-image: linear-gradient(to right, black 0%, transparent 80%);
   -webkit-mask-image: linear-gradient(to right, black 0%, transparent 80%);
@@ -676,7 +676,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .articles { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
 .articles-bg-deco {
   position: absolute; top: 10%; left: -80px; width: 400px; height: 500px;
-  background-image: url('images/anime-camera.jpg'); background-size: cover; background-position: center;
+  background-image: url('images/anime-camera.jpg?v=20261027f'); background-size: cover; background-position: center;
   opacity: 0.3; filter: saturate(0.75) brightness(0.85); z-index: 0; pointer-events: none; border-radius: 4px;
   mask-image: linear-gradient(to right, black 35%, transparent 95%);
   -webkit-mask-image: linear-gradient(to right, black 35%, transparent 95%);
@@ -791,7 +791,7 @@ body.has-hero .navbar:not(.scrolled)::after { opacity: 0; }
 .contact { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--bg); }
 .contact-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('images/anime-astronaut.jpg'); background-size: cover; background-position: center;
+  background-image: url('images/anime-astronaut.jpg?v=20261027f'); background-size: cover; background-position: center;
   opacity: 0.2; filter: saturate(0.7) brightness(0.85); z-index: 0;
 }
 .contact-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
@@ -1098,7 +1098,7 @@ body.about-page {
 .about-page .about-hero-bg::before {
   background-image:
     linear-gradient(125deg, rgba(5, 8, 12, 0.95) 4%, rgba(7, 10, 15, 0.64) 46%, rgba(7, 9, 13, 0.12) 100%),
-    url('images/about-portrait.jpeg');
+    url('images/about-portrait.jpeg?v=20261027f');
   background-size: cover, 520px auto;
   background-position: center, 88% 34%;
   background-repeat: no-repeat;
