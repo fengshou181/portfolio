@@ -1,0 +1,289 @@
+/* ============================================================
+   PAGES / 全站内页统一骨架（与首页立绘主角式同源）
+   - 左侧固定章节索引（由 body[data-ch] / body[data-en] 驱动）
+   - 章节标题改为碑刻式大标题 + 霓虹 kicker
+   - 卡片统一为漫画分格：2px 描边 / 18px 圆角 / 悬停霓虹光晕
+   ============================================================ */
+
+/* ---------- 1. 固定章节索引 ---------- */
+body.page-anime { background: var(--bg); }
+body.page-anime::before {
+  content: attr(data-ch) " / " attr(data-en);
+  position: fixed;
+  left: clamp(14px, 2.4vw, 30px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .34em;
+  color: rgba(255, 255, 255, .28);
+  text-shadow: 0 0 18px rgba(42, 240, 234, .3);
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 1180px) {
+  body.page-anime::before { display: none; }
+}
+
+/* ---------- 2. 章节头：碑刻式标题 ---------- */
+body.page-anime .section-header {
+  position: relative;
+  margin: 8px 0 44px;
+  max-width: 900px;
+}
+body.page-anime .section-tag,
+body.page-anime .page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 14px rgba(42, 240, 234, .45);
+}
+body.page-anime .section-tag::before,
+body.page-anime .page-eyebrow::before {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+body.page-anime .section-title,
+body.page-anime .contact-title,
+body.page-anime .about-hero-title,
+body.page-anime .dashboard-title {
+  margin: 16px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 6.2vw, 88px);
+  line-height: .98;
+  letter-spacing: -.035em;
+  background: linear-gradient(118deg, #ffffff 0%, #ff9ffc 52%, #c084fc 78%, #2af0ea 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: neon-shift 8s linear infinite;
+}
+/* 中文长标题按语义断行，避免出现「电商数据分 / 析看板」这种断字 */
+body.page-anime .section-title,
+body.page-anime .dashboard-title,
+body.page-anime .about-hero-title,
+body.page-anime .contact-title {
+  text-wrap: balance;
+}
+body.page-anime .section-title .accent,
+body.page-anime .about-hero-title .accent {
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+body.page-anime .section-desc,
+body.page-anime .about-hero-sub {
+  margin-top: 16px;
+  max-width: 600px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-mute);
+}
+
+/* ---------- 3. 卡片统一：漫画分格 ---------- */
+body.page-anime .project-card,
+body.page-anime .article-card,
+body.page-anime .skill-card,
+body.page-anime .friend-card,
+body.page-anime .moment-card,
+body.page-anime .about-card,
+body.page-anime .contact-method,
+body.page-anime .timeline-content,
+body.page-anime .gb-message,
+body.page-anime .log-item {
+  border: 2px solid rgba(255, 255, 255, .12);
+  border-radius: 18px;
+  background: linear-gradient(165deg, #121216, #0b0b0f);
+  transition: transform .3s var(--ease-fluid),
+              border-color .3s var(--ease-fluid),
+              box-shadow .3s var(--ease-fluid);
+}
+body.page-anime .project-card:hover,
+body.page-anime .article-card:hover,
+body.page-anime .skill-card:hover,
+body.page-anime .friend-card:hover,
+body.page-anime .moment-card:hover,
+body.page-anime .about-card:hover,
+body.page-anime .contact-method:hover,
+body.page-anime .log-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(42, 240, 234, .45);
+  box-shadow: 0 0 34px rgba(42, 240, 234, .14), 0 20px 44px -30px #000;
+}
+body.page-anime .project-img,
+body.page-anime .article-cover {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(255, 255, 255, .1);
+}
+/* 封面统一压成霓虹暗调，避免灰白封面跳色 */
+body.page-anime .project-img::after,
+body.page-anime .article-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, rgba(168, 85, 247, .26), rgba(7, 7, 7, .52) 62%, rgba(42, 240, 234, .14));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+body.page-anime .project-img img,
+body.page-anime .article-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body.page-anime .project-card.large .project-img { max-height: 380px; }
+body.page-anime .project-img img,
+body.page-anime .article-cover img {
+  filter: saturate(1.02) brightness(.85);
+  transform: scale(1.06);
+  transition: filter .35s var(--ease-fluid), transform .35s var(--ease-fluid);
+}
+/* 边缘压暗：盖掉部分封面图自带的水印/伪文字，同时强化分格观感 */
+body.page-anime .project-img::before,
+body.page-anime .article-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  box-shadow: inset 0 0 58px 18px rgba(7, 7, 7, .82);
+  pointer-events: none;
+}
+body.page-anime .project-card:hover .project-img img,
+body.page-anime .article-card:hover .article-cover img {
+  filter: saturate(1.16) brightness(1.02);
+  transform: scale(1.1);
+}
+body.page-anime .project-title,
+body.page-anime .article-title,
+body.page-anime .friend-name {
+  font-family: var(--font-display);
+  letter-spacing: -.01em;
+}
+
+/* 关于页职位行：避免「数据工程 / 师」被折断 */
+body.page-anime .about-info-role {
+  font-size: 13px;
+  letter-spacing: .14em;
+  white-space: nowrap;
+}
+
+/* ---------- 4. 页面背景装饰：压低到不抢内容 ---------- */
+body.page-anime .projects-bg-img,
+body.page-anime .skills-bg-img,
+body.page-anime .contact-bg-img,
+body.page-anime .articles-bg-deco {
+  opacity: .1;
+  filter: saturate(.6) brightness(.65);
+}
+body.page-anime .page-bg-right,
+body.page-anime .page-bg-left,
+body.page-anime .page-bg-bottom-left,
+body.page-anime .page-bg-top-right,
+body.page-anime .page-bg-full {
+  opacity: .13;
+  filter: saturate(.7) brightness(.7);
+}
+
+/* 卡片等高：文章/项目/技能栅格 */
+body.page-anime .articles-grid,
+body.page-anime .projects-grid,
+body.page-anime .skills-grid {
+  align-items: stretch;
+}
+body.page-anime .article-card,
+body.page-anime .project-card,
+body.page-anime .skill-card {
+  display: flex;
+  flex-direction: column;
+}
+body.page-anime .article-body,
+body.page-anime .project-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+body.page-anime .article-tags,
+body.page-anime .project-tags {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+/* ---------- 5. 内页 hero 段落：加光雾，不压内容 ---------- */
+body.page-anime .about-hero,
+body.page-anime .dashboard-hero,
+body.page-anime .rag-hero,
+body.page-anime .ws-hero,
+body.page-anime .contact {
+  position: relative;
+  isolation: isolate;
+}
+body.page-anime .about-hero::before,
+body.page-anime .dashboard-hero::before,
+body.page-anime .rag-hero::before,
+body.page-anime .ws-hero::before,
+body.page-anime .contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 38% at 82% 8%, rgba(168, 85, 247, .18), transparent 68%),
+    radial-gradient(34% 30% at 10% 88%, rgba(255, 61, 139, .12), transparent 70%);
+}
+
+/* ---------- 5. 表格 / 标签 ---------- */
+body.page-anime .cat-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+body.page-anime table {
+  border-collapse: collapse;
+  width: 100%;
+}
+body.page-anime thead th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+body.page-anime tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  font-size: 13px;
+}
+body.page-anime tbody tr:hover td {
+  background: rgba(42, 240, 234, .04);
+}
+
+/* ---------- 6. 移动端 ---------- */
+@media (max-width: 860px) {
+  body.page-anime .section-header { margin-bottom: 28px; }
+  body.page-anime .section-title,
+  body.page-anime .contact-title,
+  body.page-anime .about-hero-title,
+  body.page-anime .dashboard-title { font-size: clamp(36px, 10vw, 56px); }
+  body.page-anime .project-card,
+  body.page-anime .article-card,
+  body.page-anime .skill-card,
+  body.page-anime .friend-card,
+  body.page-anime .moment-card,
+  body.page-anime .about-card,
+  body.page-anime .contact-method,
+  body.page-anime .timeline-content,
+  body.page-anime .gb-message,
+  body.page-anime .log-item { border-width: 1px; }
+}

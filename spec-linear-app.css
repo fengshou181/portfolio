@@ -649,3 +649,15 @@ body::before { background-image: none; }
 .aic-btn.primary:hover { box-shadow: 0 0 24px rgba(94, 106, 210, 0.2); color: var(--text); }
 .aic-banner.err { border-color: rgba(235, 87, 87, 0.4); background: rgba(235, 87, 87, 0.08); color: #ff8f7d; }
 .aic-banner.warn { border-color: rgba(247, 191, 139, 0.4); background: rgba(247, 191, 139, 0.08); color: var(--lime); }
+
+/* ===== 知识库手法借用（2026-10-27 微调） ===== */
+/* 借自 ahmdyassr/14islands：统一流体缓动 */
+:root { --ease-fluid: cubic-bezier(.33, 1, .68, 1); }
+a, .card, .proj-card, .article-card, .ws-col, button, .btn { transition: all .22s var(--ease-fluid); }
+
+/* 借 Linear 签名交互：hover 只提升边框明度，不加阴影不位移 */
+.proj-card:hover, .article-card:hover, .card:hover { border-color: rgba(255, 255, 255, 0.22); box-shadow: none; transform: none; }
+
+/* 借 afterparty：封面图 hover 轻微提亮，保持直角 */
+.proj-card img, .article-card img { transition: filter .3s var(--ease-fluid); }
+.proj-card:hover img, .article-card:hover img { filter: brightness(1.08) saturate(1.05); }

@@ -1,0 +1,455 @@
+/* ============================================================
+   HOME / 立绘主角式首页骨架（结构层重构，非换皮）
+   仅作用于 body.home-anime，其它页面不受影响
+   ============================================================ */
+
+body.home-anime { background: var(--bg); }
+/* 首页用竖排索引替代左右小组件栏，避免覆盖立绘与项目分格 */
+body.home-anime .side-rail { display: none !important; }
+body.home-anime .site-widgets,
+body.home-anime .widget { --widget-gap: 0; }
+body.home-anime .hero-scroll { display: none; }
+
+/* ---------- 1. 首屏：文案压图 + 立绘切出 ---------- */
+.anime-hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  padding: 96px clamp(24px, 6vw, 96px) 0 clamp(24px, 10vw, 148px);
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* 立绘：贴右侧，左侧与底部渐隐入底色 */
+.anime-figure {
+  position: absolute;
+  top: 0; right: 0;
+  width: min(50vw, 760px);
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 14%, #000 34%, #000 100%),
+    linear-gradient(0deg, transparent 0%, #000 18%, #000 100%);
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 14%, #000 34%, #000 100%),
+    linear-gradient(0deg, transparent 0%, #000 18%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.anime-figure img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 34% 14%;
+  filter: saturate(1.14) contrast(1.06) brightness(.94);
+}
+.anime-figure::before {
+  content: '';
+  position: absolute;
+  inset: 8% 6% 22% 20%;
+  background: radial-gradient(circle at 58% 42%, rgba(255, 61, 139, .34), rgba(168, 85, 247, .18) 42%, transparent 68%);
+  filter: blur(46px);
+  z-index: -1;
+}
+
+/* 速度线 + 网点 */
+.anime-hero__speed {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(104deg,
+    transparent 0 22px,
+    rgba(255,255,255,.035) 22px 23px,
+    transparent 23px 46px);
+  -webkit-mask-image: radial-gradient(120% 90% at 78% 40%, #000 12%, transparent 62%);
+  mask-image: radial-gradient(120% 90% at 78% 40%, #000 12%, transparent 62%);
+  opacity: .8;
+}
+.anime-hero__halftone {
+  position: absolute; right: 0; top: 0; width: 46vw; height: 100%;
+  z-index: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(42,240,234,.28) 1px, transparent 1px);
+  background-size: 12px 12px;
+  -webkit-mask-image: radial-gradient(90% 70% at 88% 30%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(90% 70% at 88% 30%, #000 0%, transparent 70%);
+  opacity: .35;
+}
+.anime-hero__aura {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(46% 42% at 74% 26%, rgba(168,85,247,.20), transparent 66%),
+    radial-gradient(38% 34% at 18% 78%, rgba(255,61,139,.13), transparent 68%),
+    linear-gradient(180deg, #070707 0%, #070707 72%, #050507 100%);
+}
+
+/* 左侧竖排索引 */
+.anime-rail {
+  position: absolute;
+  left: clamp(14px, 3vw, 34px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.anime-rail .idx {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .3em;
+  color: var(--neon-cyan); writing-mode: vertical-rl;
+}
+.anime-rail .bar { width: 1px; height: 72px; background: linear-gradient(180deg, rgba(42,240,234,.7), transparent); }
+.anime-rail .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.anime-rail .links a {
+  display: block;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding: 8px 0;
+  transition: color .25s var(--ease-fluid), text-shadow .25s var(--ease-fluid);
+}
+.anime-rail .links a:hover { color: var(--text); text-shadow: 0 0 14px rgba(255,61,139,.6); }
+.anime-rail .scroll {
+  writing-mode: vertical-rl; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .34em; color: var(--text-mute);
+}
+
+/* 文案块（压在图上方） */
+.anime-copy { position: relative; z-index: 2; max-width: 760px; padding-bottom: 40px; }
+.anime-kicker {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--neon-cyan);
+  text-shadow: 0 0 14px rgba(42,240,234,.4);
+}
+.anime-kicker::before { content: ''; width: 34px; height: 1px; background: currentColor; box-shadow: 0 0 10px currentColor; }
+
+.anime-title {
+  margin: 26px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(58px, 8.4vw, 124px);
+  line-height: .92;
+  letter-spacing: -.035em;
+  color: #fff;
+  text-shadow: 0 12px 40px rgba(0,0,0,.75);
+}
+.anime-title .row { display: block; }
+.anime-title .row--2 { margin-left: clamp(0px, 4vw, 64px); }
+.anime-title .neon {
+  background: linear-gradient(118deg, #fff 0%, var(--neon-pink-soft) 38%, var(--neon-violet) 68%, var(--neon-cyan) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: neon-shift 7s linear infinite;
+  filter: drop-shadow(0 0 26px rgba(255,61,139,.4));
+}
+.anime-title .roman {
+  display: block; margin-top: 10px;
+  font-family: var(--font-mono); font-weight: 400;
+  font-size: clamp(10px, 1vw, 12px); letter-spacing: .46em;
+  color: var(--text-mute); text-shadow: none;
+}
+
+.anime-lead {
+  margin: 28px 0 0;
+  max-width: 540px;
+  font-size: 15px; line-height: 1.85; color: var(--text-dim);
+  font-weight: 400;
+}
+.anime-lead b { color: var(--neon-pink-soft); font-weight: 600; }
+
+.anime-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.anime-cta .solid,
+.anime-cta .ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: 46px; padding: 0 26px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display); font-size: 14px; font-weight: 600;
+  text-decoration: none;
+  transition: transform .25s var(--ease-fluid), box-shadow .25s var(--ease-fluid), background .25s var(--ease-fluid);
+}
+.anime-cta .solid {
+  color: #fff;
+  background: linear-gradient(135deg, var(--neon-pink), #c92a6a);
+  border: 1px solid rgba(255,159,252,.4);
+  box-shadow: 0 0 26px rgba(255,61,139,.42);
+}
+.anime-cta .solid:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(255,61,139,.62); }
+.anime-cta .ghost {
+  color: var(--neon-cyan);
+  border: 2px solid rgba(42,240,234,.5);
+  background: rgba(42,240,234,.04);
+}
+.anime-cta .ghost:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(42,240,234,.28); border-color: var(--neon-cyan); }
+
+/* 角色状态条：横向并入左栏，不再压在立绘上 */
+.anime-hud {
+  position: static;
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  width: fit-content;
+  margin-top: 30px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  background: rgba(8,8,12,.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em;
+  color: var(--text-mute);
+}
+.anime-hud b { color: var(--neon-pink-soft); font-weight: 500; }
+.anime-hud .lv { color: var(--neon-yellow); }
+
+/* 属性卡：斜切平行四边形条 */
+.anime-attrs {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px; max-width: 520px; margin-top: 26px; padding-bottom: 96px;
+}
+.attr {
+  position: relative;
+  padding: 16px 20px 18px;
+  border: 1px solid rgba(255,255,255,.09);
+  background: linear-gradient(150deg, rgba(24,24,30,.9), rgba(12,12,16,.92));
+  transform: skewX(-9deg);
+  transition: border-color .25s var(--ease-fluid), box-shadow .25s var(--ease-fluid);
+}
+.attr:hover { border-color: rgba(42,240,234,.45); box-shadow: 0 0 26px rgba(42,240,234,.16); }
+.attr > * { display: block; transform: skewX(9deg); }
+.attr b { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: -.02em; color: #fff; }
+.attr span { margin-top: 2px; font-size: 11px; color: var(--text-mute); letter-spacing: .04em; }
+.attr i {
+  margin-top: 12px; height: 3px; width: 100%; border-radius: 3px;
+  background: rgba(255,255,255,.08);
+  position: relative; overflow: hidden;
+}
+.attr i::after {
+  content: ''; position: absolute; inset: 0 auto 0 0;
+  width: var(--v, 60%);
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink), var(--neon-cyan));
+  box-shadow: 0 0 12px rgba(255,61,139,.6);
+}
+
+/* ---------- 2. HUD 控制台：压住首屏下沿 ---------- */
+.hud-wrap {
+  position: relative; z-index: 4;
+  padding: 0 clamp(24px, 6vw, 96px);
+  margin-top: -56px;
+}
+.hud-window {
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 22px;
+  background: rgba(9,9,13,.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 40px 90px -40px #000, 0 0 0 1px rgba(42,240,234,.06), 0 0 46px rgba(168,85,247,.12);
+  overflow: hidden;
+}
+.hud-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
+  color: var(--text-mute);
+}
+.hud-bar .dots { display: flex; gap: 6px; }
+.hud-bar .dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.16); }
+.hud-bar .dots span:nth-child(1) { background: var(--neon-pink); box-shadow: 0 0 10px rgba(255,61,139,.7); }
+.hud-bar .dots span:nth-child(2) { background: var(--neon-yellow); }
+.hud-bar .dots span:nth-child(3) { background: var(--neon-cyan); }
+.hud-body { display: grid; grid-template-columns: 1fr 1.15fr; min-width: 0; }
+.hud-col { padding: 22px 24px; min-width: 0; }
+.hud-col + .hud-col { border-left: 1px solid rgba(255,255,255,.07); }
+/* 长提示词与查询框在窄容器内换行，避免被卡片裁掉 */
+.hud-window .term-box { flex-wrap: wrap; }
+.hud-window .term-box .placeholder {
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+.hud-col h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--neon-cyan);
+}
+.hud-window .ds-row { display: grid; grid-template-columns: 76px 1fr auto; gap: 10px; align-items: center; padding: 9px 0; }
+.hud-window .ds-row:last-child { border-bottom: none; }
+.hud-window .ds-desc { font-size: 12px; }
+.hud-window .ai-chips { margin-top: 12px; }
+.hud-window .term-box { padding: 12px 14px; }
+.hud-window .term-box .placeholder { font-size: 12px; }
+
+/* ---------- 3. 项目区：漫画分格 ---------- */
+.manga-section {
+  position: relative;
+  padding: 120px clamp(24px, 6vw, 96px) 96px;
+}
+.manga-head { position: relative; margin-bottom: 46px; max-width: 760px; }
+.manga-head .ghost-num {
+  position: absolute; right: -8px; top: -34px;
+  font-family: var(--font-display); font-size: clamp(80px, 12vw, 170px);
+  font-weight: 700; line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.09);
+  pointer-events: none; user-select: none;
+}
+.manga-head h2 {
+  margin: 14px 0 12px;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(36px, 4.6vw, 62px); line-height: 1.04; letter-spacing: -.025em;
+}
+.manga-head p { margin: 0; color: var(--text-mute); font-size: 14px; line-height: 1.8; max-width: 560px; }
+
+.manga-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(255,255,255,.13);
+  border-radius: 18px;
+  background: linear-gradient(165deg, #121216, #0b0b0f);
+  overflow: hidden;
+  transition: transform .3s var(--ease-fluid), border-color .3s var(--ease-fluid), box-shadow .3s var(--ease-fluid);
+}
+.panel:nth-child(1) { grid-column: span 7; }
+.panel:nth-child(2) { grid-column: span 5; }
+.panel:nth-child(3) { grid-column: span 12; }
+.panel:hover {
+  transform: translateY(-6px);
+  border-color: rgba(42,240,234,.5);
+  box-shadow: 0 0 44px rgba(42,240,234,.16), 0 26px 50px -30px #000;
+  z-index: 2;
+}
+.panel-media { position: relative; aspect-ratio: 16/9; overflow: hidden; border-bottom: 2px solid rgba(255,255,255,.1); }
+/* 封面统一压成霓虹暗调，保留语义同时不跳色 */
+.panel-media::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(155deg, rgba(168,85,247,.34), rgba(7,7,7,.58) 62%, rgba(42,240,234,.18));
+  mix-blend-mode: multiply;
+  transition: opacity .35s var(--ease-fluid);
+}
+.panel:hover .panel-media::after { opacity: .55; }
+.panel:nth-child(3) .panel-media { aspect-ratio: 21/7; }
+/* 第 1/3 张封面原图左侧自带竖排伪文字，放大取景避开，避免与 PANEL 编号叠字 */
+.panel:nth-child(1) .panel-media img { transform: scale(1.26); transform-origin: 84% 50%; }
+.panel:nth-child(1):hover .panel-media img { transform: scale(1.34); }
+.panel:nth-child(3) .panel-media img { transform: scale(1.3); transform-origin: 68% 50%; }
+.panel:nth-child(3):hover .panel-media img { transform: scale(1.38); }
+/* 第三张封面原始偏亮，单独压暗融入暗调 */
+.panel:nth-child(3) .panel-media img { filter: saturate(.9) brightness(.62) contrast(1.02); }
+.panel:nth-child(3) .panel-media::after {
+  background: linear-gradient(120deg, rgba(168,85,247,.42), rgba(7,7,7,.55) 55%, rgba(42,240,234,.22));
+}
+.panel-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(1.05) brightness(.82);
+  transition: filter .4s var(--ease-fluid), transform .4s var(--ease-fluid);
+}
+.panel:hover .panel-media img { filter: saturate(1.18) brightness(1.04); transform: scale(1.04); }
+.panel-num {
+  position: absolute; top: 14px; left: 16px; z-index: 2;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 12px rgba(42,240,234,.6);
+}
+.panel-sfx {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  writing-mode: vertical-rl;
+  line-height: 1.12;
+  font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 40px);
+  font-weight: 700; letter-spacing: .12em;
+  color: rgba(255,61,139,.55);
+  text-shadow: 0 0 22px rgba(255,61,139,.5);
+  pointer-events: none;
+}
+.panel-body { padding: 22px 24px 24px; flex: 1 1 auto; display: flex; flex-direction: column; }
+.panel-meta {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
+  color: var(--text-mute); text-transform: uppercase;
+}
+.panel h3 {
+  margin: 10px 0 10px;
+  font-family: var(--font-display); font-size: clamp(21px, 2vw, 28px);
+  font-weight: 600; letter-spacing: -.015em;
+}
+.panel p { margin: 0; font-size: 13.5px; line-height: 1.75; color: var(--text-mute); }
+.panel-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; padding-right: 44px; }
+.panel-tags span {
+  padding: 4px 11px; border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,.09);
+  background: rgba(255,255,255,.02);
+  font-size: 11px; color: var(--text-dim);
+}
+.panel-link { position: absolute; inset: 0; z-index: 3; }
+.panel-arrow {
+  position: absolute; right: 16px; bottom: 16px;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.14);
+  color: var(--text-dim); font-size: 14px;
+  transition: all .25s var(--ease-fluid);
+}
+.panel:hover .panel-arrow { border-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 20px rgba(42,240,234,.3); }
+
+.manga-more { margin-top: 40px; display: flex; justify-content: center; }
+
+/* ---------- 4. 响应式 ---------- */
+@media (max-width: 1180px) {
+  .anime-hero { padding-left: clamp(24px, 6vw, 72px); }
+  .anime-figure { width: 62vw; opacity: .78; }
+  .anime-rail { display: none; }
+  .anime-attrs { grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 620px; }
+}
+@media (max-width: 860px) {
+  .anime-hero {
+    display: block;
+    padding: 84px 20px 24px;
+    min-height: auto;
+  }
+  /* 移动端立绘退为背景层，文字压其上 */
+  .anime-figure {
+    position: absolute;
+    top: 52px; right: -6%;
+    width: 112%; height: 68vh;
+    margin: 0;
+    opacity: .4;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 48%, transparent 86%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 48%, transparent 86%);
+  }
+  .anime-figure img { object-position: 70% 12%; filter: saturate(1.05) contrast(1.04) brightness(.7); }
+  .anime-copy { position: relative; z-index: 2; padding-bottom: 4px; }
+  .anime-name { display: none; }
+  .anime-hud { margin-top: 20px; padding: 10px 14px; gap: 6px 16px; }
+  .anime-title { font-size: clamp(50px, 13vw, 74px); }
+  .anime-title .row--2 { margin-left: 0; }
+  .anime-attrs { margin-top: 26px; padding-bottom: 34px; }
+  .hud-wrap { margin-top: 0; padding: 0 20px; }
+  .hud-body { grid-template-columns: 1fr; }
+  .hud-col + .hud-col { border-left: none; border-top: 1px solid rgba(255,255,255,.07); }
+  .hud-window .ds-row { grid-template-columns: 62px minmax(0,1fr) auto; gap: 8px; }
+  .hud-window .ds-desc { font-size: 11px; line-height: 1.5; }
+  .hud-window .ai-chip { font-size: 11px; padding: 5px 10px; }
+  .manga-section { padding: 72px 20px 64px; }
+  .panel:nth-child(1), .panel:nth-child(2), .panel:nth-child(3) { grid-column: span 12; transform: none; }
+  .panel:nth-child(3) .panel-media { aspect-ratio: 16/9; }
+  .manga-head .ghost-num { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anime-title .neon { animation: none; }
+  .panel, .attr { transition: none; }
+}

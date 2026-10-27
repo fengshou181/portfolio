@@ -9,11 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261027b">
 <link rel="stylesheet" href="hero-spatial.css?v=20261027">
-<link rel="stylesheet" href="spec-linear-app.css?v=20261027c">
+<link rel="stylesheet" href="spec-neon-cyber.css?v=20261027b">
+<link rel="stylesheet" href="home-anime.css?v=20261027t">
 <link rel="stylesheet" href="widgets.css?v=20261027k">
 <script src="hero-spatial.js" defer></script>
 </head>
-<body class="has-hero">
+<body class="has-hero home-anime">
 
 <!-- ============ LOADER ============ -->
 <div class="loader" id="loader">
@@ -53,204 +54,202 @@
   </div>
 </nav>
 
-<!-- ============ HERO: SYSTEM CONSOLE ============ -->
-<section id="hero" class="hero">
-  <div class="hero-spatial" aria-hidden="true">
-    <div class="hero-spatial__floor"></div>
-    <div class="hero-spatial__rig">
-      <div class="hero-spatial__frame hero-spatial__frame--far"></div>
-      <div class="hero-spatial__frame hero-spatial__frame--mid"></div>
-      <div class="hero-spatial__frame hero-spatial__frame--near"></div>
-      <div class="hero-spatial__block hero-spatial__block--rear"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
-      <div class="hero-spatial__block hero-spatial__block--source"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
-      <div class="hero-spatial__block hero-spatial__block--core"><span class="hero-spatial__front"><i></i><i></i><i></i><i></i><i></i></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
-      <div class="hero-spatial__block hero-spatial__block--ai"><span class="hero-spatial__front"></span><span class="hero-spatial__side"></span><span class="hero-spatial__top"></span></div>
-    </div>
-  </div>
-  <div class="hero-overlay"></div>
+<!-- ============ HERO · 立绘主角式 ============ -->
+<section id="hero" class="anime-hero">
 
-  <div class="hero-content">
-    <div style="width:100%;">
-      <!-- System status bar -->
-      <div class="sys-bar" style="margin-bottom:36px;">
-        <div class="sys-left">
-          <span class="sys-brand">FENGNIAN / DATA INTELLIGENCE LAB</span>
-          <span class="status-tag ok">SYSTEM ONLINE</span>
-        </div>
-        <div class="sys-right">
-          <span>数据快照 2026-10-18</span>
-          <span>Apache Doris</span>
-        </div>
-      </div>
+  <div class="anime-hero__aura" aria-hidden="true"></div>
+  <div class="anime-hero__speed" aria-hidden="true"></div>
+  <div class="anime-hero__halftone" aria-hidden="true"></div>
 
-      <h1 class="hero-title">
-        <span class="line">数据智能</span>
-        <span class="line"><span class="accent">实验室</span></span>
-      </h1>
-      <p class="hero-subtitle" style="margin-top:16px;">
-        数据工程 × AI 分析系统：1.35 亿行电商数据仓库运行在 Apache Doris 上，
-        Text-to-SQL 智能问答可直接用中文查询数仓 —— 全链路本地运行，零数据外发。
-      </p>
-
-      <!-- Console split panels -->
-      <div class="console-grid">
-        <!-- Dataset status -->
-        <div class="console-panel">
-          <div class="console-panel-head">
-            <span>数据集状态 / DATASETS</span>
-            <span class="status-tag ok">4/4 可用</span>
-          </div>
-          <div class="ds-list">
-            <div class="ds-row">
-              <span class="ds-name">olist</span>
-              <span class="ds-desc">巴西电商 99,441 订单</span>
-              <span class="status-tag ok">READY</span>
-            </div>
-            <div class="ds-row">
-              <span class="ds-name">amazon</span>
-              <span class="ds-desc">商品评论 40.9 万条</span>
-              <span class="status-tag ok">READY</span>
-            </div>
-            <div class="ds-row">
-              <span class="ds-name">instacart</span>
-              <span class="ds-desc">生鲜杂货 3,346 万商品项</span>
-              <span class="status-tag ok">READY</span>
-            </div>
-            <div class="ds-row">
-              <span class="ds-name">taobao</span>
-              <span class="ds-desc">用户行为 1 亿条</span>
-              <span class="status-tag warn">SNAPSHOT</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- AI Copilot entry -->
-        <div class="console-panel">
-          <div class="console-panel-head">
-            <span>AI 数据分析 Copilot</span>
-            <span class="status-tag info">qwen2.5:3b · 本地推理</span>
-          </div>
-          <div class="ai-entry-body">
-            <div class="term-box" onclick="window.AICopilot && window.AICopilot.open('查询 Olist 已交付订单的 GMV')">
-              <span class="prompt">◈</span>
-              <span class="placeholder">用中文提问，直接查询数仓，例如：查询 Olist 已交付订单的 GMV…</span>
-              <span class="status-tag ok">READY</span>
-            </div>
-            <div class="ai-chips">
-              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('查看 Olist 已交付订单的 GMV')">查看已交付 GMV</button>
-              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('比较四个数据集的订单量')">比较各数据集订单量</button>
-              <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('分析淘宝用户行为转化率变化')">分析转化率变化</button>
-              <a class="ai-chip" href="workspace.html" style="text-decoration:none;">进入 AI 工作台 →</a>
-            </div>
-            <p style="font-size:11px; color:var(--text-mute); font-family:var(--font-mono);">
-              回答包含：数据来源 · 指标口径 · 可展开 SQL · 耗时 · 快照日期
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- 左侧竖排索引 -->
+  <div class="anime-rail" aria-hidden="true">
+    <span class="idx">01 / KEY VISUAL</span>
+    <span class="bar"></span>
+    <nav class="links">
+      <a href="projects.html">项目</a>
+      <a href="articles.html">文章</a>
+      <a href="about.html">关于</a>
+      <a href="contact.html">联系</a>
+    </nav>
+    <span class="bar"></span>
+    <span class="scroll">SCROLL</span>
   </div>
 
-  <div class="hero-bottom-bar">
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num">1.35亿</div><div class="label">宽表事实行数</div><div class="sub">截至 2026-10-18</div></div>
-      <div class="hero-stat"><div class="num">25</div><div class="label">物理表</div><div class="sub">5 个业务库</div></div>
-      <div class="hero-stat"><div class="num">4</div><div class="label">宽表建模</div><div class="sub">Olist/Amazon/Instacart/淘宝</div></div>
-      <div class="hero-stat"><div class="num">85.3%</div><div class="label">RAG 准确率</div><div class="sub">37 用例评测集</div></div>
-    </div>
-    <div class="hero-tech-strip">
-      <span>SQL</span><span>ETL</span><span>Apache Doris</span><span>Text-to-SQL</span><span>LangChain</span><span>Chroma</span><span>Ollama</span><span>Chart.js</span>
-    </div>
+  <!-- 立绘 -->
+  <div class="anime-figure" aria-hidden="true">
+    <img src="images/hero-character-alt.jpg" alt="">
   </div>
 
-  <div class="hero-scroll">
-    <div class="line"></div>
-    <div class="text">SCROLL</div>
+  <!-- 文案 -->
+  <div class="anime-copy">
+    <div class="anime-kicker">DATA INTELLIGENCE LAB</div>
+
+    <h1 class="anime-title">
+      <span class="row">数据智能</span>
+      <span class="row row--2"><span class="neon">实验室</span></span>
+      <span class="roman">DATA · WAREHOUSE · INTELLIGENCE</span>
+    </h1>
+
+    <p class="anime-lead">
+      1.35 亿行电商数据仓库运行在 Apache Doris 上，
+      Text-to-SQL 智能问答可直接用中文查询数仓 ——
+      <b>全链路本地运行，零数据外发。</b>
+    </p>
+
+    <div class="anime-cta">
+      <a href="projects.html" class="solid">查看项目 &#8599;</a>
+      <a href="workspace.html" class="ghost">进入 AI 工作台</a>
+    </div>
+
+    <!-- 角色状态条 -->
+    <div class="anime-hud">
+      <span>角色 · <b>丰年 FENGNIAN</b></span>
+      <span>CLASS · <b>DATA ENGINEER</b></span>
+      <span>LEVEL · <b class="lv">Lv.3</b></span>
+      <span>STATUS · <b>ACTIVE</b></span>
+    </div>
+
+    <!-- 属性卡 -->
+    <div class="anime-attrs">
+      <div class="attr"><b>1.35亿</b><span>宽表事实行数</span><i style="--v:92%"></i></div>
+      <div class="attr"><b>25</b><span>物理表</span><i style="--v:52%"></i></div>
+      <div class="attr"><b>4</b><span>宽表建模</span><i style="--v:38%"></i></div>
+      <div class="attr"><b>85.3%</b><span>RAG 准确率</span><i style="--v:85%"></i></div>
+    </div>
   </div>
 </section>
 
-<!-- ============ FEATURED PROJECTS ============ -->
-<section id="featured-projects" class="section projects" style="padding: 120px 0;">
-  <div class="projects-bg-img"></div>
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-tag">FEATURED WORK</span>
-      <h2 class="section-title">精选项目</h2>
-      <p class="section-desc">从数仓架构、ETL 开发到 AI 智能问答，完整交付的数据系统工程。</p>
+<!-- ============ HUD 控制台 ============ -->
+<div class="hud-wrap">
+  <div class="hud-window">
+    <div class="hud-bar">
+      <span class="dots"><span></span><span></span><span></span></span>
+      <span>SYSTEM CONSOLE · 数据快照 2026-10-18</span>
+      <span>4/4 DATASETS ONLINE</span>
     </div>
-    <div class="projects-grid">
-      <div class="project-card large fade-up">
-        <a href="ecommerce-dashboard.html">
-          <div class="project-arrow">&#8599;</div>
-          <div class="project-img">
-            <img src="images/anime-mecha.jpg" alt="多源电商数据分析平台" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-category">E-COMMERCE ANALYTICS</span>
-              <span class="project-year">2026.09 - 至今</span>
-            </div>
-            <h3 class="project-title">多源电商数据分析平台</h3>
-            <p class="project-desc">
-              基于 Apache Doris 构建多源电商数据整合分析平台，整合 Olist、Amazon、Instacart、淘宝四大数据集共计 1.35 亿条记录。
-              设计 4 张宽表串联订单-商品-用户-支付全链路，完成探索性数据分析与可视化看板。
-            </p>
-            <div class="project-tags">
-              <span>Apache Doris</span><span>宽表建模</span><span>EDA</span>
-              <span>用户行为分析</span><span>Chart.js</span>
-            </div>
-          </div>
-        </a>
+    <div class="hud-body">
+      <div class="hud-col">
+        <h3>数据集状态 / DATASETS</h3>
+        <div class="ds-row">
+          <span class="ds-name">olist</span>
+          <span class="ds-desc">巴西电商 99,441 订单</span>
+          <span class="status-tag ok">READY</span>
+        </div>
+        <div class="ds-row">
+          <span class="ds-name">amazon</span>
+          <span class="ds-desc">商品评论 40.9 万条</span>
+          <span class="status-tag ok">READY</span>
+        </div>
+        <div class="ds-row">
+          <span class="ds-name">instacart</span>
+          <span class="ds-desc">生鲜杂货 3,346 万商品项</span>
+          <span class="status-tag ok">READY</span>
+        </div>
+        <div class="ds-row">
+          <span class="ds-name">taobao</span>
+          <span class="ds-desc">用户行为 1 亿条</span>
+          <span class="status-tag warn">SNAPSHOT</span>
+        </div>
       </div>
-      <div class="project-card fade-up">
-        <a href="rag-benchmark.html">
-          <div class="project-arrow">&#8599;</div>
-          <div class="project-img">
-            <img src="images/anime-sinon.jpg" alt="RAG 智能问答系统" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-category">RAG · TEXT-TO-SQL</span>
-              <span class="project-year">2026.10</span>
-            </div>
-            <h3 class="project-title">电商数仓 RAG 智能问答</h3>
-            <p class="project-desc">
-              本地 LLM（Ollama + qwen2.5:3b）+ 向量检索（Chroma）的 Text-to-SQL 系统，中文提问直查 Doris 数仓，
-              评测准确率 85.3%，执行成功率 100%。
-            </p>
-            <div class="project-tags">
-              <span>Ollama</span><span>Chroma</span><span>sqlglot</span><span>37 用例评测</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="project-card fade-up">
-        <a href="projects.html">
-          <div class="project-arrow">&#8599;</div>
-          <div class="project-img">
-            <img src="images/anime-astronaut.jpg" alt="榜样全链路数据仓库" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-category">DATA WAREHOUSE</span>
-              <span class="project-year">2026.03 - 2026.08</span>
-            </div>
-            <h3 class="project-title">榜样全链路数据仓库</h3>
-            <p class="project-desc">
-              三层数仓架构，整合5个广告平台与双订单平台，开发近200字段全链路宽表串联完整业务链路。
-            </p>
-            <div class="project-tags">
-              <span>SQL ETL</span><span>三层数仓</span><span>LTV分析</span>
-            </div>
-          </div>
-        </a>
+      <div class="hud-col">
+        <h3>AI 数据分析 Copilot · qwen2.5:3b 本地推理</h3>
+        <div class="term-box" onclick="window.AICopilot && window.AICopilot.open('查询 Olist 已交付订单的 GMV')">
+          <span class="prompt">◈</span>
+          <span class="placeholder">用中文提问，直接查询数仓，例如：查询 Olist 已交付订单的 GMV…</span>
+          <span class="status-tag ok">READY</span>
+        </div>
+        <div class="ai-chips">
+          <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('查看 Olist 已交付订单的 GMV')">查看已交付 GMV</button>
+          <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('比较四个数据集的订单量')">比较各数据集订单量</button>
+          <button class="ai-chip" onclick="window.AICopilot && window.AICopilot.open('分析淘宝用户行为转化率变化')">分析转化率变化</button>
+          <a class="ai-chip" href="workspace.html" style="text-decoration:none;">进入 AI 工作台 →</a>
+        </div>
+        <p style="font-size:11px; color:var(--text-mute); font-family:var(--font-mono); margin:12px 0 0;">
+          回答包含：数据来源 · 指标口径 · 可展开 SQL · 耗时 · 快照日期
+        </p>
       </div>
     </div>
-    <div style="text-align:center; margin-top: 48px;">
-      <a href="projects.html" class="nav-cta" style="display:inline-flex; align-items:center; gap:8px;">
-        查看全部项目 &#8594;
-      </a>
-    </div>
+  </div>
+</div>
+
+<!-- ============ FEATURED PROJECTS · 漫画分格 ============ -->
+<section id="featured-projects" class="manga-section">
+  <div class="manga-head">
+    <span class="ghost-num">02</span>
+    <span class="section-tag">FEATURED WORK</span>
+    <h2>精选项目</h2>
+    <p>从数仓架构、ETL 开发到 AI 智能问答，完整交付的数据系统工程。</p>
+  </div>
+
+  <div class="manga-grid">
+    <article class="panel">
+      <a class="panel-link" href="ecommerce-dashboard.html" aria-label="多源电商数据分析平台"></a>
+      <span class="panel-num">PANEL 01</span>
+      <span class="panel-sfx">ゴゴゴ</span>
+      <div class="panel-media">
+        <img src="images/proj-ecom.jpg" alt="多源电商数据分析平台" loading="lazy">
+      </div>
+      <div class="panel-body">
+        <div class="panel-meta">
+          <span>E-COMMERCE ANALYTICS</span>
+          <span>2026.09 - 至今</span>
+        </div>
+        <h3>多源电商数据分析平台</h3>
+        <p>基于 Apache Doris 整合 Olist、Amazon、Instacart、淘宝四大数据集共 1.35 亿条记录，设计 4 张宽表串联订单-商品-用户-支付全链路。</p>
+        <div class="panel-tags">
+          <span>Apache Doris</span><span>宽表建模</span><span>EDA</span><span>Chart.js</span>
+        </div>
+      </div>
+      <span class="panel-arrow">&#8599;</span>
+    </article>
+
+    <article class="panel">
+      <a class="panel-link" href="rag-benchmark.html" aria-label="电商数仓 RAG 智能问答"></a>
+      <span class="panel-num">PANEL 02</span>
+      <span class="panel-sfx">ドン</span>
+      <div class="panel-media">
+        <img src="images/proj-rag.jpg" alt="RAG 智能问答系统" loading="lazy">
+      </div>
+      <div class="panel-body">
+        <div class="panel-meta">
+          <span>RAG · TEXT-TO-SQL</span>
+          <span>2026.10</span>
+        </div>
+        <h3>电商数仓 RAG 智能问答</h3>
+        <p>本地 LLM（Ollama + qwen2.5:3b）+ 向量检索（Chroma）的 Text-to-SQL 系统，中文提问直查 Doris 数仓，评测准确率 85.3%。</p>
+        <div class="panel-tags">
+          <span>Ollama</span><span>Chroma</span><span>sqlglot</span><span>37 用例</span>
+        </div>
+      </div>
+      <span class="panel-arrow">&#8599;</span>
+    </article>
+
+    <article class="panel">
+      <a class="panel-link" href="projects.html" aria-label="榜样全链路数据仓库"></a>
+      <span class="panel-num">PANEL 03</span>
+      <span class="panel-sfx">ゴ</span>
+      <div class="panel-media">
+        <img src="images/proj-warehouse.jpg" alt="榜样全链路数据仓库" loading="lazy">
+      </div>
+      <div class="panel-body">
+        <div class="panel-meta">
+          <span>DATA WAREHOUSE</span>
+          <span>2026.03 - 2026.08</span>
+        </div>
+        <h3>榜样全链路数据仓库</h3>
+        <p>三层数仓架构，整合 5 个广告平台与双订单平台，开发近 200 字段全链路宽表串联完整业务链路。</p>
+        <div class="panel-tags">
+          <span>SQL ETL</span><span>三层数仓</span><span>LTV 分析</span>
+        </div>
+      </div>
+      <span class="panel-arrow">&#8599;</span>
+    </article>
+  </div>
+
+  <div class="manga-more">
+    <a href="projects.html" class="nav-cta" style="display:inline-flex; align-items:center; gap:8px;">
+      查看全部项目 &#8594;
+    </a>
   </div>
 </section>
 
@@ -311,121 +310,6 @@ window.addEventListener('load', function() {
   }, 500);
 });
 
-// ============ HERO CANVAS PARTICLE NETWORK (cyan) ============
-(function() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let mouse = { x: null, y: null, radius: 150 };
-  let rafId = null;
-  let isVisible = true;
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      resize();
-      init();
-    }, 200);
-  });
-
-  var mouseTimer;
-  window.addEventListener('mousemove', function(e) {
-    if (mouseTimer) return;
-    mouseTimer = requestAnimationFrame(function() {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouseTimer = null;
-    });
-  });
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = (Math.random() - 0.5) * 0.3;
-      this.size = Math.random() * 1.5 + 0.5;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-      if (mouse.x) {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          let force = (mouse.radius - dist) / mouse.radius;
-          this.x -= dx * force * 0.02;
-          this.y -= dy * force * 0.02;
-        }
-      }
-    }
-    draw() {
-      ctx.fillStyle = 'rgba(41, 211, 255, 0.45)';
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function init() {
-    particles = [];
-    let count = Math.min(60, Math.floor(canvas.width * canvas.height / 18000));
-    for (let i = 0; i < count; i++) particles.push(new Particle());
-  }
-  init();
-
-  function connect() {
-    var len = particles.length;
-    for (var a = 0; a < len; a++) {
-      for (var b = a + 1; b < len; b++) {
-        var dx = particles[a].x - particles[b].x;
-        var dy = particles[a].y - particles[b].y;
-        var distSq = dx * dx + dy * dy;
-        if (distSq < 16900) {
-          var dist = Math.sqrt(distSq);
-          var op = (1 - dist / 130) * 0.15;
-          ctx.strokeStyle = 'rgba(41, 211, 255, ' + op + ')';
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(particles[b].x, particles[b].y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function animate() {
-    if (!isVisible) { rafId = null; return; }
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (var i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
-    connect();
-    rafId = requestAnimationFrame(animate);
-  }
-  animate();
-
-  var heroObserver = new IntersectionObserver(function(entries) {
-    isVisible = entries[0].isIntersecting;
-    if (isVisible && !rafId) animate();
-  }, { threshold: 0.05 });
-  heroObserver.observe(document.getElementById('hero'));
-})();
-
 // ============ SCROLL FADE-UP ============
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
@@ -457,8 +341,6 @@ window.addEventListener('scroll', function() {
     scrollTicking = false;
   });
 });
-
-// ============ 配色锁定：跟随设计规范 new-chat-6be，不提供主题切换 ============
 </script>
 
 <script src="ai-copilot.js?v=20261024b"></script>
